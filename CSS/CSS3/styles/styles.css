@@ -1,0 +1,35 @@
+/*------- External CSS ---------*/
+/* universal selector */
+*
+{
+    background-color: darkcyan;
+}
+h3,h5 /*selector*/
+/*declaration block*/
+{
+    color:/*property*/ green;/*value*/
+}
+
+/* tag */
+h5
+{
+    font-size: large;
+}
+
+/* id */
+#java
+{
+    font-family: fantasy;
+}
+
+/* class */
+.hd
+{
+    background-color: burlywood;
+}
+
+/* specific tag with class and multiple tags*/
+h6.hd,h5.hd
+{
+    background-color: red;
+}

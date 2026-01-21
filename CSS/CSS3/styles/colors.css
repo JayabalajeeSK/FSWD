@@ -1,0 +1,22 @@
+/*------- External CSS ---------*/
+/* Hexadecimal value */
+*
+{
+    background-color: #d1c005;
+}
+
+#java
+{
+    color: rgb(rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255));
+}
+
+.hd
+{
+    color: rgba(green, rgb(184, 212, 184), purple);
+}
+
+h1.hd
+{
+    color: red;
+    opacity: 50%;
+}

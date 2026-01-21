@@ -1,0 +1,32 @@
+/*------- External CSS ---------*/
+/* Hexadecimal value */
+/* *
+{
+    background-color: aqua;
+} */
+
+*
+{
+    /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnA_x5_N3J7sD5e2nYOFUYfQqyhdw8R424Gg&s");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-attachment: fixed; */
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnA_x5_N3J7sD5e2nYOFUYfQqyhdw8R424Gg&s") no-repeat top left fixed; 
+    /* short hand */
+}
+
+/* #java
+{
+    color: rgb(rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255));
+}
+
+.hd
+{
+    color: rgba(green, rgb(184, 212, 184), purple);
+}
+
+h1.hd
+{
+    color: red;
+    opacity: 50%;
+} */
