@@ -1,0 +1,18 @@
+PS E:\FSWD\ReactJS> node --version  
+v24.13.0
+
+npm install vite@latest
+npm create vite@latest
+
+cd React-App
+npm install
+npm run dev
+> react-app@0.0.0 dev
+> vite
+
+
+  VITE v7.3.1  ready in 1085 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
