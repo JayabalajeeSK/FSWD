@@ -1,3 +1,5 @@
+Day 1:
+
 use swj
 switched to db swj
 
@@ -19,3 +21,18 @@ db.courses.drop()
 true
 db.dropDatabase()
 { ok: 1, dropped: 'swj' }
+
+Day 2
+
+db.courses.insertOne({name: "dsa", videos: 50, duration: 20.5})
+
+db.courses.find()
+
+db.courses.insertMany( [ {name: "java", videos: 10, duration: 10}, {name: "c", videos: 14, duration: 14.5}  ])
+
+db.courses.find()
+
+db.courses.insertMany( [ {name: "React", videos: 10, duration: 10}, {name: "c", videos: 14, duration: 14.5}  ])
+
+db.courses.insertMany( [ {name: "React", videos: 10, duration: 10}, {name: "c", videos: 14, duration: 14.5, completed: true, publishedDate: new Date(), instructor: ["Jaya", "Bala"]}  ])
+
