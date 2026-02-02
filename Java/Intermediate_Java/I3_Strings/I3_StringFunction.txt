@@ -1,0 +1,165 @@
+String Functions:
+1. charAt(int index) – Returns the character located at the specified index in the string.
+2. length() – Returns the total number of characters present in the string.
+3. substring(int beginIndex) – Returns a new string starting from the specified index to the end of
+the string.
+4. substring(int beginIndex, int endIndex) – Returns a part of the string from the start index up
+to, but not including, the end index.
+5. contains(CharSequence s) – Checks if the string contains the specified sequence of characters;
+returns true or false.
+6. equals(Object another) – Compares the string with another object for exact equality,
+considering case.
+7. equalsIgnoreCase(String another) – Compares the string with another string for equality,
+ignoring case differences.
+8. compareTo(String another) – Compares two strings lexicographically and returns a numeric
+difference based on character Unicode values.
+9. compareToIgnoreCase(String another) – Compares two strings lexicographically, ignoring case
+differences.
+10. concat(String str) – Joins the given string to the end of the current string.
+11. toLowerCase() – Converts all characters of the string to lowercase.
+12. toUpperCase() – Converts all characters of the string to uppercase.
+13. trim() – Removes leading and trailing whitespace from the string.
+14. isEmpty() – Checks whether the string has zero length.
+15. isBlank() – Checks whether the string is empty or contains only whitespace characters.
+16. split(String regex) – Divides the string into an array of substrings based on the given regular
+expression.
+17. join(CharSequence delimiter, CharSequence... elements) – Combines multiple strings into a
+single string, separated by the specified delimiter.
+18. replace(char oldChar, char newChar) – Replaces all occurrences of a specified character with
+another character.
+19. replace(CharSequence target, CharSequence replacement) – Replaces all occurrences of a
+specified sequence of characters with another sequence.
+20. replaceAll(String regex, String replacement) – Replaces every substring matching the given
+regular expression with the specified replacement.
+21. replaceFirst(String regex, String replacement) – Replaces only the first substring matching
+the given regular expression.
+22. startsWith(String prefix) – Checks if the string begins with the specified prefix.
+23. endsWith(String suffix) – Checks if the string ends with the specified suffix.
+24. indexOf(int ch) – Returns the index of the first occurrence of the specified character; returns
+-1 if not found.
+25. indexOf(String str) – Returns the index of the first occurrence of the specified substring.
+26. lastIndexOf(int ch) – Returns the index of the last occurrence of the specified character;
+returns -1 if not found.
+27. lastIndexOf(String str) – Returns the index of the last occurrence of the specified substring.
+28. intern() – Returns a canonical representation of the string from the string pool, useful for
+memory optimization.
+29. matches(String regex) – Checks if the entire string matches the given regular expression.
+30. toCharArray() – Converts the string into an array of characters.
+31. format(String format, Object... args) – Returns a formatted string using the specified format
+and arguments.
+32. strip() – Removes all leading and trailing whitespaces from the string, including Unicode
+spaces.
+33. stripLeading() – Removes only leading whitespaces from the string.
+34. stripTrailing() – Removes only trailing whitespaces from the string.
+35. repeat(int count) – Creates a new string by repeating the original string a specified number
+of times.
+36. lines() – Returns a stream of lines extracted from the string, separated by line terminators.
+37. codePointAt(int index) – Returns the Unicode code point of the character at the specified
+index.
+38. codePointBefore(int index) – Returns the Unicode code point of the character immediately
+before the specified index.
+39. codePointCount(int beginIndex, int endIndex) – Returns the number of Unicode code points
+in the specified text range.
+40. getBytes() – Converts the string into a byte array using the platform’s default character
+encoding.
+import java.util.Arrays;
+public class StringFunctionPro1 {
+public static void main(String[] args) {
+String s1 = "Hello";
+System.out.println(s1.charAt(1)); // e
+String s2 = "Hello";
+System.out.println(s2.length()); // 5
+String s3 = "Hello";
+System.out.println(s3.substring(2)); // llo
+String s4 = "Hello";
+System.out.println(s4.substring(1, 4)); // ell
+String s5 = "Hello World";
+System.out.println(s5.contains("World")); // true
+System.out.println("Java".equals("java")); // false
+System.out.println("Java".equalsIgnoreCase("java")); // true
+System.out.println("apple".compareTo("banana")); // negative value
+System.out.println("Apple".compareToIgnoreCase("apple")); // 0
+System.out.println("Hello".concat(" World")); // Hello World
+System.out.println("JAVA".toLowerCase()); // java
+System.out.println("java".toUpperCase()); // JAVA
+System.out.println(" Hi ".trim()); // Hi
+System.out.println("".isEmpty()); // true
+System.out.println(" ".isBlank()); // true (Java 11+)
+String s6 = "a,b,c";
+System.out.println(Arrays.toString(s6.split(","))); // [a, b, c]
+System.out.println(String.join("-", "a", "b", "c")); // a-b-c
+System.out.println("banana".replace('a', 'o')); // bonono
+System.out.println("Java is fun".replace("fun", "cool")); // Java is
+cool
+System.out.println("abc123xyz".replaceAll("\\d", "#")); // abc###xyz
+System.out.println("abc123123".replaceFirst("\\d", "#")); // abc#23123
+System.out.println("Hello".startsWith("He")); // true
+System.out.println("Hello".endsWith("lo")); // true
+System.out.println("banana".indexOf('a')); // 1
+System.out.println("banana".indexOf("na")); // 2
+System.out.println("banana".lastIndexOf('a')); // 5
+System.out.println("banana".lastIndexOf("na")); // 4
+String s7 = new String("Java");
+String s8 = s7.intern();
+System.out.println(s7 == s8); // false
+System.out.println("12345".matches("\\d+")); // true
+System.out.println(Arrays.toString("Java".toCharArray())); // [J, a,
+v, a]
+System.out.println(String.format("My name is %s and age %d", "JB",
+22));
+// My name is JB and age 22
+System.out.println(" Hello ".strip()); // Hello (Java 11+)
+System.out.println(" Hello".stripLeading()); // Hello
+System.out.println("Hello ".stripTrailing()); // Hello
+System.out.println("Hi ".repeat(3)); // Hi Hi Hi
+String s9 = "One\nTwo\nThree";
+System.out.println(s9.lines().toList()); // [One, Two, Three] (Java
+11+)
+System.out.println("A".codePointAt(0)); // 65
+System.out.println("AB".codePointBefore(1)); // 65
+System.out.println("Hello".codePointCount(0, 5)); // 5
+String s10 = "ABC";
+byte[] arr = s10.getBytes();
+System.out.println(Arrays.toString(arr)); // [65, 66, 67]
+}
+}
+// e
+// 5
+// llo
+// ell
+// true
+// false
+// true
+// -1
+// 0
+// Hello World
+// java
+// JAVA
+// Hi
+// true
+// true
+// [a, b, c]
+// a-b-c
+// bonono
+// Java is cool
+// abc###xyz
+// abc#23123
+// true
+// true
+// 1
+// 2
+// 5
+// 4
+// false
+// true
+// [J, a, v, a]
+// My name is JB and age 22
+// Hello
+// Hello
+// Hello
+// Hi Hi Hi
+// [One, Two, Three]
+// 65
+// 65
+// 5
+// [65, 66, 67]

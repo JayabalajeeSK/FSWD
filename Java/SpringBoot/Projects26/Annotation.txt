@@ -1,0 +1,139 @@
+@SpringBootApplication
+@Entity
+@Table(name = "todos")
+@Component
+vs @Bean
+@Lazy
+@Autowired
+
+-------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@SpringBootApplication looks small, but it does A LOT behind the scenes.
+
+What is @SpringBootApplication really?
+
+👉 It is not a single thing.
+It is a combination of 3 important annotations.
+
+@SpringBootApplication
+
+
+Means 👇
+
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan
+
+1️⃣ @Configuration
+What it does
+
+Tells Spring:
+
+“This class contains configuration”
+
+Allows Spring to create beans
+
+Think:
+
+This is the brain/config file of the app
+
+2️⃣ @EnableAutoConfiguration ⭐ (MOST IMPORTANT)
+What it does
+
+Spring Boot automatically configures things for you
+
+Example:
+
+Added spring-boot-starter-web?
+→ Configures Tomcat, DispatcherServlet
+
+Added JPA?
+→ Configures EntityManager, DataSource
+
+👉 No manual setup, no XML
+
+3️⃣ @ComponentScan
+What it does
+
+Scans packages for:
+
+@Component
+
+@Service
+
+@Repository
+
+@Controller
+
+@RestController
+
+Creates objects (beans) automatically
+
+📌 Important rule
+
+It scans current package + sub-packages only
+
+🔥 What happens if you remove @SpringBootApplication?
+
+❌ No beans created
+❌ Controllers won’t work
+❌ Auto config won’t happen
+❌ App will fail or run empty
+
+🧠 Simple Analogy
+
+@SpringBootApplication = Master switch
+
+Turns ON:
+
+Auto setup
+
+Object creation
+
+App wiring
+
+🧩 One-line Interview Answer 💯
+
+@SpringBootApplication enables auto-configuration, component scanning, and Java-based configuration for a Spring Boot application.
+
+🚀 In simple words
+
+Without @SpringBootApplication, your Spring Boot app is just a normal Java program.
+--------------------------------------------------------------------
+

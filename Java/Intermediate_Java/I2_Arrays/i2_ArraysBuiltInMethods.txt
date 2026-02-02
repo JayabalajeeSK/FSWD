@@ -1,0 +1,209 @@
+ALL ARRAY & ARRAYS CLASS METHODS (FULL LIST IN YOUR FORMAT)
+⭐ 1. array.length
+
+Meaning: Returns size of array
+
+Code:
+
+int size = arr.length;
+
+⭐ 2. System.arraycopy()
+
+Meaning: Copies elements from one array to another
+
+Code:
+
+System.arraycopy(src, 0, dest, 0, src.length);
+
+⚡ ARRAYS CLASS — ALL METHODS
+3. Arrays.toString(array)
+
+Meaning: Converts 1D array to String
+
+Code:
+
+System.out.println(Arrays.toString(arr));
+
+4. Arrays.deepToString(array)
+
+Meaning: Converts 2D/3D arrays to String
+
+Code:
+
+System.out.println(Arrays.deepToString(twoD));
+
+5. Arrays.sort(array)
+
+Meaning: Sorts array in ascending order
+
+Code:
+
+Arrays.sort(arr);
+
+6. Arrays.sort(array, from, to)
+
+Meaning: Sorts a specific portion of array
+
+Code:
+
+Arrays.sort(arr, 1, 4);
+
+7. Arrays.sort(array, Comparator)
+
+Meaning: Sorts objects using custom comparator
+
+Code:
+
+Arrays.sort(names, (a,b)->a.compareTo(b));
+
+8. Arrays.parallelSort(array)
+
+Meaning: Multi-threaded fast sort
+
+Code:
+
+Arrays.parallelSort(arr);
+
+9. Arrays.binarySearch(array, key)
+
+Meaning: Searches element in sorted array
+
+Code:
+
+int idx = Arrays.binarySearch(arr, 50);
+
+10. Arrays.binarySearch(array, from, to, key)
+
+Meaning: Searches within range
+
+Code:
+
+int idx = Arrays.binarySearch(arr, 1, 4, 20);
+
+11. Arrays.copyOf(array, newLength)
+
+Meaning: Copies into new array of given size
+
+Code:
+
+int[] newArr = Arrays.copyOf(arr, 10);
+
+12. Arrays.copyOfRange(array, from, to)
+
+Meaning: Copies part of array into new one
+
+Code:
+
+int[] part = Arrays.copyOfRange(arr, 2, 5);
+
+13. Arrays.equals(arr1, arr2)
+
+Meaning: Checks if two 1D arrays are equal
+
+Code:
+
+boolean same = Arrays.equals(a, b);
+
+14. Arrays.deepEquals(arr1, arr2)
+
+Meaning: Compares 2D/3D arrays
+
+Code:
+
+boolean same = Arrays.deepEquals(twoD1, twoD2);
+
+15. Arrays.compare(arr1, arr2)
+
+Meaning: Lexicographically compares two arrays
+
+Code:
+
+int result = Arrays.compare(a, b);
+
+16. Arrays.compareUnsigned(arr1, arr2)
+
+Meaning: Compares unsigned int/byte arrays
+
+Code:
+
+int result = Arrays.compareUnsigned(a, b);
+
+17. Arrays.hashCode(array)
+
+Meaning: Generates hash for 1D array
+
+Code:
+
+int hash = Arrays.hashCode(arr);
+
+18. Arrays.deepHashCode(array)
+
+Meaning: Hash code for multi-dimensional array
+
+Code:
+
+int hash = Arrays.deepHashCode(twoD);
+
+19. Arrays.fill(array, value)
+
+Meaning: Fills entire array with value
+
+Code:
+
+Arrays.fill(arr, 10);
+
+20. Arrays.fill(array, from, to, value)
+
+Meaning: Fills specific portion
+
+Code:
+
+Arrays.fill(arr, 1, 4, 99);
+
+21. Arrays.mismatch(arr1, arr2)
+
+Meaning: Returns index where arrays differ
+
+Code:
+
+int diffIndex = Arrays.mismatch(a, b);
+
+22. Arrays.stream(array)
+
+Meaning: Converts array to stream
+
+Code:
+
+IntStream st = Arrays.stream(arr);
+
+23. Arrays.asList(array)
+
+Meaning: Converts array to List (fixed-size)
+
+Code:
+
+List<Integer> list = Arrays.asList(10, 20, 30);
+
+24. Arrays.setAll(array, lambda)
+
+Meaning: Sets elements based on index logic
+
+Code:
+
+Arrays.setAll(arr, i -> i * 2);
+
+25. Arrays.parallelSetAll(array, lambda)
+
+Meaning: Parallel version of setAll()
+
+Code:
+
+Arrays.parallelSetAll(arr, i -> i + 5);
+
+26. Arrays.parallelPrefix(array, operator)
+
+Meaning: Prefix sum (cumulative operation)
+
+Code:
+
+Arrays.parallelPrefix(arr, (x, y) -> x + y);

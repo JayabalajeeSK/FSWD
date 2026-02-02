@@ -1,0 +1,246 @@
+OPERATORS IN JAVA — COMPLETE NOTES
+✅ 1. Arithmetic Operators
+
+Used for mathematical operations.
+| Operator | Meaning             |
+| -------- | ------------------- |
+| +        | Addition            |
+| -        | Subtraction         |
+| *        | Multiplication      |
+| /        | Division            |
+| %        | Modulus (remainder) |
+
+✅ 2. Unary Operators
+
+Work on a single operand.
+
+| Operator | Meaning        |
+| -------- | -------------- |
+| ++x      | pre-increment  |
+| x++      | post-increment |
+| --x      | pre-decrement  |
+| x--      | post-decrement |
+| +x       | unary plus     |
+| -x       | unary minus    |
+
+3. Relational Operators
+
+Used for comparison.
+
+| Operator | Meaning          |
+| -------- | ---------------- |
+| ==       | equal            |
+| !=       | not equal        |
+| >        | greater          |
+| <        | less             |
+| >=       | greater or equal |
+| <=       | less or equal    |
+
+4. Logical Operators
+
+Used for boolean logic.
+
+| Operator | Meaning     | Notes         |
+| -------- | ----------- | ------------- |
+| &&       | Logical AND | Short-circuit |
+| ||       | Logical OR  | Short-circuit |
+| !        | NOT         | Unary         |
+
+5. Bitwise Operators
+| Operator | Meaning                      |
+| -------- | ---------------------------- |
+| &        | AND                          |
+| |        | OR                           |
+| ^        | XOR                          |
+| ~        | NOT                          |
+| <<       | Left shift                   |
+| >>       | Right shift (sign preserved) |
+| >>>      | Unsigned right shift         |
+
+6. Assignment Operators
+| Operator | Meaning           |
+| -------- | ----------------- |
+| =        | assign            |
+| +=       | add & assign      |
+| -=       | subtract & assign |
+| *=       | multiply & assign |
+| /=       | divide & assign   |
+| %=       | mod & assign      |
+
+7. Ternary Operator
+
+Used for short conditions.
+int age = 20;
+String result = (age >= 18) ? "Adult" : "Minor";
+System.out.println(result); // Adult
+
+
+8. Operator Precedence (Highest → Lowest)
+| Precedence Level | Operators                          |
+| ---------------- | ---------------------------------- |
+| **1 (Highest)**  | ++, --, + (unary), - (unary), !, ~ |
+| **2**            | *, /, %                            |
+| **3**            | +, -                               |
+| **4**            | <<, >>, >>>                        |
+| **5**            | <, <=, >, >=                       |
+| **6**            | ==, !=                             |
+| **7**            | &                                  |
+| **8**            | ^                                  |
+| **9**            | |                                  |
+| **10**           | &&                                 |
+| **11**           | ||                                 |
+| **12**           | ?:                                 |
+| **13 (Lowest)**  | =, +=, -=, *=, /=                  |
+ 
+hat is short-circuiting?
+
+In logical operators:
+
+✔ && stops if first condition is false
+✔ || stops if first condition is true
+| >>                      | >>>                 |
+| ----------------------- | ------------------- |
+| Arithmetic right shift  | Logical right shift |
+| Preserves sign bit      | Fills with zeros    |
+| Works on signed numbers | No sign extension   |
+
+Why bitwise operators are faster than logical?
+
+Because they operate on bits, not on boolean expressions.
+
+XOR - Unique
+
+
+| Level | Operators              | Description    |            |            |
+| ----- | ---------------------- | -------------- | ---------- | ---------- |
+| 1     | `()`                   | Parenthesis    |            |            |
+| 2     | `++ --`                | Unary          |            |            |
+| 3     | `* / %`                | Multiplicative |            |            |
+| 4     | `+ -`                  | Additive       |            |            |
+| 5     | `<< >> >>>`            | Shift          |            |            |
+| 6     | `< <= > >= instanceof` | Relational     |            |            |
+| 7     | `== !=`                | Equality       |            |            |
+| 8     | `&`                    | Bitwise AND    |            |            |
+| 9     | `^`                    | Bitwise XOR    |            |            |
+| 10    | `                      | `              | Bitwise OR |            |
+| 11    | `&&`                   | Logical AND    |            |            |
+| 12    | `                      |                | `          | Logical OR |
+| 13    | `?:`                   | Ternary        |            |            |
+| 14    | `= += -= *= /= %=`     | Assignment     |            |            |
+
+What is BODMAS?
+
+B O D M A S
+
+B → Brackets
+
+O → Orders (powers, roots)
+
+D → Division
+
+M → Multiplication
+
+A → Addition
+
+S → Subtraction
+
+Order:
+Brackets → Powers → Division/Multiplication → Addition/Subtraction
+
+✅ What is PEMDAS / PERDAS?
+
+PEMDAS is the US version:
+
+P → Parentheses
+
+E → Exponents
+
+M → Multiplication
+
+D → Division
+
+A → Addition
+
+S → Subtraction
+
+PERDAS (your version) means:
+
+P → Parentheses
+
+E → Exponents
+
+R → Roots
+
+D → Division
+
+A → Addition
+
+S → Subtraction
+
+⭐ BODMAS vs PEDMAS — Are They Same?
+
+Yes.
+
+| BODMAS         | PEDMAS         |
+| -------------- | -------------- |
+| Brackets       | Parentheses    |
+| Orders         | Exponents      |
+| Division       | Division       |
+| Multiplication | Multiplication |
+| Addition       | Addition       |
+| Subtraction    | Subtraction    |
+
+MOST IMPORTANT RULE
+
+Division and Multiplication have same priority.
+Solve left to right.
+
+Addition and Subtraction also have same priority → solve left to right.
+
+ava Operator Associativity Table
+1️⃣ Left → Right Associativity
+
+These operators evaluate from left to right.
+
+| Operator Type               | Operators                                 |    |   |
+| --------------------------- | ----------------------------------------- | -- | - |
+| **Arithmetic**              | `+  -  *  /  %`                           |    |   |
+| **Relational**              | `<  >  <=  >=  ==  !=`                    |    |   |
+| **Logical AND/OR**          | `&&                                       |    | ` |
+| **Bitwise AND/OR/XOR**      | `&                                        | ^` |   |
+| **Shift operators**         | `<<  >>  >>>`                             |    |   |
+| **Assignment Evaluations?** | ❌ No, they are right to left              |    |   |
+| **Array access**            | `arr[index]`                              |    |   |
+| **Method call**             | `object.method()`                         |    |   |
+| **Ternary evaluation?**     | Condition L→R but final associativity R→L |    |   |
+
+Right → Left Associativity (VERY IMPORTANT)
+
+| Operator Type            | Operators                                      |    |
+| ------------------------ | ---------------------------------------------- | -- |
+| **Unary operators**      | `++x   --x   x++   x--   +x   -x   !  ~`       |    |
+| **Assignment operators** | `=  +=  -=  *=  /=  %=  <<=  >>=  >>>=  &=  ^= | =` |
+| **Ternary operator**     | `?:`                                           |    |
+| **Object creation**      | `new`                                          |    |
+| **Type casting**         | `(int) (float) (byte)`                         |    |
+
+Interview Trick Summary
+LEFT → RIGHT
+
+➤ Arithmetic
+➤ Relational
+➤ Logical (&&, ||)
+➤ Bitwise (&, |, ^)
+➤ Shift (<<, >>, >>>)
+
+RIGHT → LEFT
+
+➤ Unary
+➤ Assignment (=, +=, -=, …)
+➤ Ternary (?:)
+➤ Type casting
+
+Which operators have right-to-left associativity?
+
+Answer:
+Unary, assignment, type casting, and ternary.

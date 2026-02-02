@@ -1,0 +1,325 @@
+Variables in Java — Complete Explanation
+
+Java has 3 main types of variables:
+Local variables
+Instance variables
+Static (class) variables
+
+Plus additional concepts:
+Naming conventions
+Scope
+Shadowing
+
+Let’s go one by one with clean examples.
+
+🟦 1. Local Variables
+
+✔ Declared inside a method, constructor, or block
+✔ Cannot have access modifiers (public, private, etc.)
+✔ Must be initialized before use
+✔ Stored in stack memory
+✔ Lifetime → only during method execution
+
+📌 Example
+public class Demo {
+    public void show() {
+        int x = 10;  // local variable
+        System.out.println("Local variable x = " + x);
+    }
+}
+
+🟦 2. Instance Variables (Object Variables)
+
+✔ Declared inside class but outside methods
+✔ Belong to each object (so every object gets its own copy)
+✔ Stored in heap memory
+✔ Can have access modifiers
+✔ Default values are assigned automatically
+
+📌 Example
+public class Student {
+    String name;     // instance variable
+    int age;         // instance variable
+
+    public void display() {
+        System.out.println(name + " " + age);
+    }
+}
+
+🟦 3. Static Variables (Class Variables)
+
+✔ Declared with static keyword
+✔ Belong to the class, not objects
+✔ All objects share one single copy
+✔ Stored in Method Area of memory
+✔ Useful for constants, counters, shared values
+
+📌 Example
+public class Employee {
+    static String company = "Google";  // static variable
+    int id;
+
+    Employee(int id) {
+        this.id = id;
+    }
+
+    public void show() {
+        System.out.println(id + " works at " + company);
+    }
+}
+
+| Type      | Convention       | Example           |
+| --------- | ---------------- | ----------------- |
+| Variables | camelCase        | totalMarks        |
+| Class     | PascalCase       | EmployeeData      |
+| Constants | UPPER_SNAKE_CASE | MAX_SPEED         |
+| Methods   | camelCase        | calculateSalary() |
+
+✔ Should start with letter, $, or _
+✔ Cannot start with a number
+✔ Cannot use Java keywords (class, int, static, ...)
+
+| Variable Type | Scope                    | Lifetime                           |
+| ------------- | ------------------------ | ---------------------------------- |
+| Local         | Inside method/block only | Method execution                   |
+| Instance      | Entire object            | As long as object exists           |
+| Static        | Entire class             | Till program ends / class unloaded |
+
+Variable Shadowing
+
+Shadowing happens when a local variable uses the same name as an instance or static variable.
+
+📌 Example of Shadowing
+public class ShadowDemo {
+    int x = 50;  // instance variable
+
+    public void show() {
+        int x = 10;  // local variable (shadows instance variable)
+        System.out.println(x);        // prints: 10 (local)
+        System.out.println(this.x);   // prints: 50 (instance)
+    }
+}
+
+
+✔ this.x is used to access the instance variable
+✔ Local variable hides the instance variable
+
+1️⃣ What is the difference between local, instance, and static variables?
+
+✔ Local → inside method, no default value
+✔ Instance → per object, stored in heap
+✔ Static → per class, shared by all objects
+
+2️⃣ Why do local variables have no default values?
+
+➡ Because Java wants developers to avoid errors from using uninitialized values.
+➡ Instance & static variables are stored in the heap/class area → auto-initialized.
+➡ Local variables are in stack → must be initialized manually.
+
+3️⃣ Can we use static keyword inside a method?
+
+❌ No, you cannot create a static local variable in Java.
+
+4️⃣ What is variable shadowing?
+
+➡ When a local variable has the same name as an instance/static variable.
+➡ Use this.variableName to access instance variable.
+
+5️⃣ Where are static, instance, and local variables stored?
+| Type     | Memory Location          |
+| -------- | ------------------------ |
+| Local    | Stack                    |
+| Instance | Heap                     |
+| Static   | Method Area (Class area) |
+
+6️⃣ Can a static method access instance variables?
+
+❌ No, because static methods belong to class, not objects.
+✔ But instance methods can access static variables.
+
+Part 2: Short Interview Questions
+1️⃣ What are local, instance, and static variables?
+
+✔ Local → inside method, no default value
+✔ Instance → per object, stored in heap
+✔ Static → per class, shared by all objects
+
+2️⃣ Why local variables don’t have default values?
+
+Because they are stored on stack, and Java forces initialization to avoid errors.
+
+3️⃣ Can static variables be accessed by object?
+
+Yes, but not recommended.
+Correct way: ClassName.variable
+
+4️⃣ Are static variables stored in heap?
+
+No → stored in Method Area / Class Area
+
+5️⃣ What is variable shadowing?
+
+Local variable hides instance variable of same name.
+
+🟦 Part 3: Coding Output (Tricky & Asked in Interviews)
+Q1: What is the output?
+class Test {
+    int x = 5;
+
+    void show() {
+        int x = 10;
+        System.out.println(x);
+        System.out.println(this.x);
+    }
+
+    public static void main(String[] args) {
+        new Test().show();
+    }
+}
+
+
+✔ Output:
+
+10
+5
+
+Q2: What is the output?
+class Demo {
+    static int a = 10;
+    int b = 20;
+
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        System.out.println(a);
+        System.out.println(d.b);
+    }
+}
+
+
+✔ Output:
+
+10
+20
+
+Q3: What happens?
+class A {
+    public static void main(String[] args) {
+        int x;
+        System.out.println(x);
+    }
+}
+
+
+❌ Compile-time error
+➡ Local variable x not initialized.
+
+Q4: Shadowing with static
+class X {
+    static int value = 100;
+
+    public static void main(String[] args) {
+        int value = 50;
+        System.out.println(value);
+        System.out.println(X.value);
+    }
+}
+
+
+✔ Output:
+
+50
+100
+
+Q5: Static counter (Amazon asked)
+class Counter {
+    static int count = 0;
+
+    Counter() { count++; }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        new Counter();
+        new Counter();
+        new Counter();
+        System.out.println(Counter.count);
+    }
+}
+
+
+✔ Output:
+
+3
+
+🟦 Part 4: Real Coding Questions (Asked in Zoho / TCS / Accenture)
+1️⃣ Write a program to count how many objects are created using static variable.
+class Counter {
+    static int count = 0;
+
+    Counter() {
+        count++;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        new Counter();
+        new Counter();
+        new Counter();
+        System.out.println("Objects created = " + Counter.count);
+    }
+}
+
+2️⃣ Program to demonstrate variable shadowing
+class Shadow {
+    int x = 100;
+
+    void show() {
+        int x = 50;
+        System.out.println("Local x = " + x);
+        System.out.println("Instance x = " + this.x);
+    }
+}
+
+3️⃣ Program to print all variables with memory explanation
+class MemoryDemo {
+    static int staticVar = 10;    // method area
+    int instanceVar = 20;         // heap
+
+    void show() {
+        int localVar = 30;        // stack
+        System.out.println(staticVar + " " + instanceVar + " " + localVar);
+    }
+}
+
+4️⃣ Program where static variables change for all objects
+class Demo {
+    static int shared = 0;
+
+    Demo() { shared++; }
+}
+
+🟩 Part 5: HOT Interview Question (Important)
+1. Can a static method access ‘this’?
+
+❌ No — because this belongs to object.
+
+2. Can we overload static methods?
+
+✔ Yes (normal method overloading)
+
+3. Can we override static methods?
+
+❌ No — static methods do not participate in runtime polymorphism.
+
+4. Can static variables be accessed inside instance methods?
+
+✔ Yes — instance methods can access everything.
+
+5. Can you explain memory layout of Java variables?
+
+| Type     | Memory      |
+| -------- | ----------- |
+| Local    | Stack       |
+| Instance | Heap        |
+| Static   | Method Area |

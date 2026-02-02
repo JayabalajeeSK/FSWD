@@ -1,0 +1,268 @@
+I will cover:
+
+String class basics
+
+String Constant Pool (SCP)
+
+Immutability
+
+All important String methods with code
+
+StringBuffer (mutable + synchronized)
+
+StringBuilder (mutable + not synchronized)
+
+String.format()
+
+Interview questions from each topic
+
+Let’s start.
+
+8. STRINGS — COMPLETE NOTES (With Code & Interview Questions)
+1. String Class Basics
+✔ Meaning
+
+String is a class in java.lang package, used to store sequence of characters.
+
+✔ Ways to create a String
+1. Using String literal
+
+Stored in String Constant Pool
+
+String s1 = "Hello";
+String s2 = "Hello"; // same object reused
+
+2. Using new keyword
+
+Stored in Heap
+
+String s3 = new String("Hello");
+
+✔ Why Strings are widely used?
+
+Used in input/output
+
+Used in file reading
+
+Used in network communication
+
+Used in database queries
+
+2. String Constant Pool (SCP)
+✔ What is SCP?
+
+A special memory area inside Heap where Java stores string literals.
+
+✔ Example:
+String a = "Java";
+String b = "Java";
+
+System.out.println(a == b); // true (same memory)
+
+✔ But using new:
+String c = new String("Java");
+System.out.println(a == c); // false (different objects)
+
+3. Immutability of String
+✔ Strings cannot be changed once created.
+
+Every modification creates a new object.
+
+✔ Why immutable?
+
+Thread-safe
+
+Security (passwords, URLs)
+
+Used in HashMap keys
+
+Better performance in SCP
+
+✔ Example:
+String s = "Hello";
+s = s + " World"; // new object created
+
+4. IMPORTANT STRING METHODS (With Code)
+
+I will include all major ones.
+
+1. length()
+String s = "Java";
+System.out.println(s.length()); // 4
+
+2. charAt(index)
+String s = "Java";
+System.out.println(s.charAt(2)); // v
+
+3. substring()
+String s = "programming";
+System.out.println(s.substring(3));    // gramming
+System.out.println(s.substring(3, 7)); // gram
+
+4. contains()
+String s = "Java Programming";
+System.out.println(s.contains("Java")); // true
+
+5. equals() and equalsIgnoreCase()
+String a = "Hello";
+String b = "hello";
+
+System.out.println(a.equals(b));            // false
+System.out.println(a.equalsIgnoreCase(b));  // true
+
+6. startsWith() / endsWith()
+String s = "hello.java";
+System.out.println(s.startsWith("hello")); // true
+System.out.println(s.endsWith(".java"));  // true
+
+7. indexOf(), lastIndexOf()
+String s = "banana";
+System.out.println(s.indexOf("a"));       // 1
+System.out.println(s.lastIndexOf("a"));   // 5
+
+8. toLowerCase(), toUpperCase()
+System.out.println("Java".toLowerCase());
+
+9. trim()
+String s = "   test   ";
+System.out.println(s.trim()); // test
+
+10. replace()
+System.out.println("Java".replace('a', 'o')); // Jovo
+
+11. split()
+String s = "a,b,c";
+String[] arr = s.split(",");
+
+12. join()
+String result = String.join("-", "A", "B", "C"); // A-B-C
+
+5. StringBuffer (Mutable + Synchronized)
+✔ Key Points
+
+Mutable → changes same object
+
+Synchronized → Thread-safe
+
+Slower than StringBuilder
+
+✔ Code:
+StringBuffer sb = new StringBuffer("Hello");
+sb.append(" World");
+System.out.println(sb); // Hello World
+
+Useful methods:
+
+append()
+
+insert()
+
+delete()
+
+reverse()
+
+capacity()
+
+6. StringBuilder (Mutable + NOT Synchronized)
+✔ Key Points
+
+Mutable
+
+NOT thread-safe
+
+Fastest performance
+
+✔ Code:
+StringBuilder sb = new StringBuilder("Java");
+sb.append(" Rocks");
+System.out.println(sb.toString());
+
+7. String.format()
+✔ Used to format strings similar to printf
+String name = "JB";
+int age = 25;
+
+String result = String.format("Name: %s, Age: %d", name, age);
+System.out.println(result);
+
+Common placeholders:
+
+%s → String
+
+%d → integer
+
+%f → float
+
+%.2f → 2 decimal places
+
+8. FULL PROGRAM USING EVERYTHING
+public class StringDemo {
+    public static void main(String[] args) {
+
+        // String Basics
+        String s1 = "Hello";
+        String s2 = new String("Hello");
+
+        // Immutability
+        String s3 = s1 + " World"; // new object created
+
+        // Methods
+        System.out.println(s3.length());
+        System.out.println(s3.charAt(1));
+        System.out.println(s3.contains("World"));
+        System.out.println(s3.substring(0, 5));
+        System.out.println(s3.toUpperCase());
+
+        // StringBuffer
+        StringBuffer sb = new StringBuffer("Java");
+        sb.append(" Programming");
+        System.out.println(sb);
+
+        // StringBuilder
+        StringBuilder sb2 = new StringBuilder("Fast");
+        sb2.append(" Builder");
+        System.out.println(sb2);
+
+        // String.format
+        String msg = String.format("Name: %s, Age: %d", "JB", 24);
+        System.out.println(msg);
+    }
+}
+
+🎯 INTERVIEW QUESTIONS (MOST ASKED)
+1. What is String immutability? Why is String immutable?
+
+Answer above: security + performance + thread-safe + SCP reuse.
+
+2. Difference between String, StringBuffer, StringBuilder?
+String → Immutable, slow, thread-safe  
+StringBuffer → Mutable, synchronized, slow  
+StringBuilder → Mutable, not synchronized, fastest  
+
+3. Why String is used as key in HashMap?
+
+Because immutable → hashcode never changes.
+
+4. What is String Constant Pool?
+
+Special memory area where literals are stored & reused.
+
+5. Why “==” works differently for Strings?
+
+== compares reference
+equals() compares content
+
+6. Difference between substring(start, end) and substring(start)?
+7. Why StringBuilder is faster?
+
+Because it is not synchronized.
+
+8. Can we make String mutable?
+
+No, but you can use:
+
+char[]
+
+StringBuilder
+
+StringBuffer

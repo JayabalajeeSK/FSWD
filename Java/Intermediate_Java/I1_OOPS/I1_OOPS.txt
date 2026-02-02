@@ -1,0 +1,439 @@
+✅ 1. CLASS & OBJECT
+Class
+
+A class is a blueprint or template.
+It defines variables + methods but does not occupy memory.
+
+Object
+
+An object is a real instance of a class created using new.
+It occupies memory.
+
+✔ Example
+class Student {
+    String name;
+    int age;
+
+    void display() {
+        System.out.println(name + " - " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student();  // object created
+        s.name = "JB";
+        s.age = 22;
+        s.display();
+    }
+}
+
+✅ Constructors
+
+Special methods used to initialize objects.
+
+Default Constructor
+
+Provided by Java automatically if you don’t create one.
+
+Parameterized Constructor
+
+Constructor with arguments.
+
+✔ Example: Constructor Overloading
+class Car {
+    String model;
+    int price;
+
+    // Default constructor
+    Car() {
+        model = "Unknown";
+        price = 0;
+    }
+
+    // Parameterized constructor
+    Car(String model, int price) {
+        this.model = model;
+        this.price = price;
+    }
+
+    void show() {
+        System.out.println(model + " - " + price);
+    }
+}
+
+⭐ this keyword
+
+Used to:
+
+Access current object's variables
+
+Call other constructors using this()
+
+Pass current object
+
+✔ Example
+class Demo {
+    int x;
+    Demo(int x) {
+        this.x = x; // refers to class variable
+    }
+}
+
+✅ 2. ENCAPSULATION
+
+Wrapping data + methods together using private variables and public getters/setters.
+
+✔ Example
+class Account {
+    private int balance;
+
+    public void setBalance(int amount) {
+        balance = amount;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+}
+| Modifier  | Access               |
+| --------- | -------------------- |
+| private   | same class only      |
+| default   | same package         |
+| protected | package + subclasses |
+| public    | everywhere           |
+
+✅ 3. INHERITANCE
+
+Acquiring properties of another class.
+
+✔ Types
+
+Single
+
+Multilevel
+
+Hierarchical
+
+✔ Example (Single Inheritance)
+class Animal {
+    void eat() { System.out.println("eating"); }
+}
+
+class Dog extends Animal {
+    void bark() { System.out.println("barking"); }
+}
+
+⭐ super keyword
+
+Used to call parent constructor or parent method.
+
+class A {
+    A() { System.out.println("A constructor"); }
+}
+
+class B extends A {
+    B() {
+        super(); // calls A()
+        System.out.println("B constructor");
+    }
+}
+
+✔ Constructor Chaining
+class A {
+    A() { System.out.println("A"); }
+}
+
+class B extends A {
+    B() { System.out.println("B"); }
+}
+
+class C extends B {
+    C() { System.out.println("C"); }
+}
+
+⭐ Method Overriding (Runtime Polymorphism)
+
+Child class provides a new definition for parent method.
+
+class Phone {
+    void show() { System.out.println("Phone"); }
+}
+
+class SmartPhone extends Phone {
+    @Override
+    void show() { System.out.println("SmartPhone"); }
+}
+
+⭐ Dynamic Method Dispatch
+
+Reference is parent type, object is child type.
+
+Phone p = new SmartPhone();
+p.show();  // SmartPhone
+
+⭐ Compile-time Polymorphism — Overloading
+
+Same method name, different parameters.
+
+class Add {
+    int sum(int a, int b) { return a + b; }
+    int sum(int a, int b, int c) { return a + b + c; }
+}
+
+✅ 5. ABSTRACTION
+Abstract Class
+
+May contain abstract + non-abstract methods.
+
+abstract class Shape {
+    abstract void draw();
+    void print() { System.out.println("Printing"); }
+}
+
+class Circle extends Shape {
+    void draw() { System.out.println("Drawing Circle"); }
+}
+
+⭐ Interfaces
+
+Supports:
+
+Abstract methods
+
+Default methods (Java 8)
+
+Static methods (Java 8)
+
+interface Animal {
+    void sound(); // abstract method
+
+    default void sleep() {
+        System.out.println("sleeping...");
+    }
+
+    static void info() {
+        System.out.println("Animal Interface");
+    }
+}
+
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Bark");
+    }
+}
+
+⭐ Association vs Aggregation vs Composition
+✔ Association
+
+General relationship.
+
+class Teacher {}
+class Student {}
+
+✔ Aggregation (weak)
+
+Child can survive without parent.
+
+class College {
+    Student s;
+}
+
+✔ Composition (strong)
+
+Child cannot survive without parent.
+
+class House {
+    private Room r = new Room(); // tightly bound
+}
+
+🔥 INTERVIEW PROGRAM — FULL OOP IMPLEMENTATION
+
+A single demo program using ALL important OOP concepts.
+
+// INTERFACE
+interface Payment {
+    double calculate(double amount);
+
+    default void success() {
+        System.out.println("Payment Successful!");
+    }
+}
+
+// ABSTRACT CLASS
+abstract class User {
+    String name;
+    User(String name) { this.name = name; }
+
+    abstract void greet();
+}
+
+// CLASS WITH ENCAPSULATION
+class Wallet {
+    private double balance;
+
+    public void addMoney(double amount) { balance += amount; }
+    public double getBalance() { return balance; }
+}
+
+// INHERITANCE + OVERRIDING + SUPER
+class Customer extends User implements Payment {
+    Wallet wallet = new Wallet();
+    
+    Customer(String name) {
+        super(name);
+    }
+
+    @Override
+    void greet() {
+        System.out.println("Hello " + name);
+    }
+
+    @Override
+    public double calculate(double amount) {
+        return amount * 0.95; // 5% discount
+    }
+}
+
+// MAIN PROGRAM
+public class OOPDemo {
+    public static void main(String[] args) {
+
+        User u = new Customer("JB"); // Dynamic dispatch
+        u.greet();
+
+        Customer c = (Customer) u;
+        c.wallet.addMoney(1000);
+
+        double finalAmt = c.calculate(200);
+        System.out.println("Final Amount: " + finalAmt);
+
+        c.success();
+        System.out.println("Wallet Balance: " + c.wallet.getBalance());
+    }
+}
+
+🔥 Interview Questions (MOST ASKED)
+1. Difference between abstract class & interface?
+Abstract Class	Interface
+Can have concrete methods	All methods abstract until Java 8
+Can have constructor	No constructor
+Supports single inheritance	Supports multiple inheritance
+Variables can be any type	Variables are public static final
+2. Why use encapsulation?
+
+Security
+
+Controlled access
+
+Hides internal implementation
+
+3. What is dynamic method dispatch?
+
+Runtime polymorphism → method call decided at runtime using object type.
+
+4. What is method overloading vs overriding?
+Overloading	Overriding
+Compile-time	Runtime
+Same method name, different params	Same method signature in child class
+5. What is HAS-A Relationship?
+
+Association → Aggregation → Composition.
+
+💠 Association → Aggregation → Composition
+
+These are OOP relationships between classes (how two classes are connected).
+
+All three represent a HAS-A relationship, but the strength of the relationship increases in this order:
+
+✔ Association (weakest)
+✔ Aggregation (medium)
+✔ Composition (strongest)
+
+Let’s explain with real-life examples + Java code.
+
+🟦 1. ASSOCIATION (Weak Relationship)
+
+Two classes are related, but both can exist independently.
+
+👉 Example:
+A Teacher teaches a Student, but
+
+Teacher can exist without Student
+
+Student can exist without Teacher
+
+✔ Code:
+class Teacher {
+    String name;
+}
+
+class Student {
+    String name;
+}
+
+// They interact, but neither owns the other.
+
+
+📌 Key point:
+No ownership. They just use each other.
+
+🟩 2. AGGREGATION (Weak HAS-A / “Whole–Part” relationship)
+
+One class contains another class,
+but child can survive even if parent is destroyed.
+
+👉 Example:
+A College HAS students,
+but a Student can exist even if the College closes.
+
+✔ Code:
+class Student {
+    String name;
+}
+
+class College {
+    Student student; // HAS-A (Aggregation)
+}
+
+
+📌 Key point:
+
+College has students
+
+Students don’t depend on College
+
+Independent life cycle
+
+🟥 3. COMPOSITION (Strongest HAS-A)
+
+Child cannot exist without parent.
+Parent owns and controls the child object completely.
+
+👉 Example:
+A House has Rooms,
+but a Room cannot exist without the House.
+
+✔ Code:
+class Room {
+    // part of house
+}
+
+class House {
+    private Room room = new Room(); // Composition
+}
+
+
+📌 Key point:
+
+Strong ownership
+
+If House is destroyed → Rooms also destroyed
+
+Same life cycle
+
+| Relationship    | Meaning        | Dependency | Example            | Life Cycle  |
+| --------------- | -------------- | ---------- | ------------------ | ----------- |
+| **Association** | Connection     | None       | Teacher ↔ Student  | Separate    |
+| **Aggregation** | HAS-A (weak)   | Partial    | College → Students | Independent |
+| **Composition** | HAS-A (strong) | Full       | House → Room       | Dependent   |

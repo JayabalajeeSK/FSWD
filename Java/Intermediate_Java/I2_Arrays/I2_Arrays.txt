@@ -1,0 +1,244 @@
+🔷 1. One-Dimensional Arrays
+✔ Definition
+
+A 1D array stores multiple values of the same type in a single variable.
+
+✔ Declaration + Initialization
+int[] arr = new int[5];          // size 5 (default values = 0)
+int[] nums = {10, 20, 30, 40};   // direct initialization
+
+✔ Accessing elements
+System.out.println(nums[0]); // 10
+nums[2] = 99;
+
+✔ Program: 1D Array Basics
+public class OneDArray {
+    public static void main(String[] args) {
+
+        int[] arr = {10, 20, 30, 40, 50};
+
+        System.out.println("Using normal for loop:");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+
+        System.out.println("Using enhanced for loop:");
+        for (int num : arr) {
+            System.out.println(num);
+        }
+    }
+}
+
+🔷 2. Multi-Dimensional Arrays (Matrix)
+
+💡 A 2D array is an array of arrays.
+
+✔ Declaration + Initialization
+int[][] matrix = new int[3][3];
+
+int[][] marks = {
+    {10, 20, 30},
+    {40, 50, 60},
+    {70, 80, 90}
+};
+
+✔ Accessing
+System.out.println(marks[1][2]); // 60
+
+✔ Program: Print 2D Array
+public class TwoDArray {
+    public static void main(String[] args) {
+
+        int[][] mat = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[i].length; j++) {
+                System.out.print(mat[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+🔷 3. Jagged Arrays (Irregular Array)
+
+💡 A jagged array (ragged array) is an array where each row has different length.
+
+✔ Example
+int[][] jagged = {
+    {1, 2},
+    {3, 4, 5},
+    {6}
+};
+
+✔ Program
+public class JaggedArray {
+    public static void main(String[] args) {
+
+        int[][] jag = {
+            {1, 2},
+            {3, 4, 5},
+            {6}
+        };
+
+        for (int i = 0; i < jag.length; i++) {
+            for (int j = 0; j < jag[i].length; j++) {
+                System.out.print(jag[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+🔷 4. Array Initialization Styles
+✔ Separate steps
+int[] a;
+a = new int[5];
+
+✔ Inline
+int[] a = {1, 2, 3, 4};
+
+✔ Dynamic (runtime)
+Scanner sc = new Scanner(System.in);
+int n = sc.nextInt();
+int[] arr = new int[n];
+
+🔷 5. Array Traversal Loops
+✔ Using for
+for (int i = 0; i < arr.length; i++)
+    System.out.println(arr[i]);
+
+✔ Using enhanced for
+for (int x : arr)
+    System.out.println(x);
+
+✔ Using while loop
+int i = 0;
+while (i < arr.length) {
+    System.out.println(arr[i]);
+    i++;
+}
+
+🔷 6. Array Length
+
+array.length → gives total number of elements.
+
+✔ Works for: 1D, 2D, jagged arrays.
+
+Example:
+int[][] x = new int[3][4];
+System.out.println(x.length);     // 3 rows
+System.out.println(x[0].length);  // 4 columns
+
+🔷 7. Common Array Errors
+❌ 1. ArrayIndexOutOfBoundsException
+
+Occurs when accessing an invalid index.
+
+int[] arr = {1, 2, 3};
+System.out.println(arr[3]); // ❌ error
+
+
+Array index ranges from 0 to length-1.
+
+❌ 2. NullPointerException
+int[] arr = null;
+System.out.println(arr[0]); // ❌ NPE
+
+❌ 3. NegativeArraySizeException
+int[] arr = new int[-5]; // ❌
+
+❌ 4. Mismatched Dimensions (in jagged arrays)
+int[][] arr = new int[3][];
+System.out.println(arr[0][0]); // ❌ arr[0] has no row created
+
+🔥 COMPLETE PROGRAM — Covers All Topics (1D, 2D, Jagged, loops, errors)
+public class ArrayDemo {
+    public static void main(String[] args) {
+
+        // 1D Array
+        int[] oneD = {10, 20, 30};
+
+        System.out.println("1D Array:");
+        for (int x : oneD) System.out.println(x);
+
+        // 2D Array
+        int[][] twoD = {
+            {1, 2, 3},
+            {4, 5, 6}
+        };
+
+        System.out.println("\n2D Array:");
+        for (int i = 0; i < twoD.length; i++) {
+            for (int j = 0; j < twoD[i].length; j++) {
+                System.out.print(twoD[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // Jagged Array
+        int[][] jagged = {
+            {1, 2},
+            {3, 4, 5},
+            {6}
+        };
+
+        System.out.println("\nJagged Array:");
+        for (int i = 0; i < jagged.length; i++) {
+            for (int j = 0; j < jagged[i].length; j++) {
+                System.out.print(jagged[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // Array length
+        System.out.println("\nLength of 1D: " + oneD.length);
+        System.out.println("Rows in 2D: " + twoD.length);
+        System.out.println("Columns in first row: " + twoD[0].length);
+    }
+}
+
+🧠 Interview Questions
+1️⃣ Difference between 1D, 2D, and Jagged arrays?
+
+1D → list of items
+
+2D → matrix
+
+Jagged → irregular matrix (different row sizes)
+
+2️⃣ What is default value in arrays?
+
+int → 0
+
+boolean → false
+
+object → null
+
+3️⃣ Why array size is fixed?
+
+Because arrays use contiguous memory allocation.
+
+4️⃣ How to copy arrays?
+
+System.arraycopy()
+
+Arrays.copyOf()
+
+Manual loop
+
+5️⃣ Why is ArrayIndexOutOfBoundsException thrown?
+
+Because Java ensures memory safety by preventing invalid access.
+
+6️⃣ What is the difference between array and ArrayList?
+
+| Array                       | ArrayList           |
+| --------------------------- | ------------------- |
+| Fixed size                  | Dynamic size        |
+| Stores primitives & objects | Stores only objects |
+| Faster                      | Slightly slower     |

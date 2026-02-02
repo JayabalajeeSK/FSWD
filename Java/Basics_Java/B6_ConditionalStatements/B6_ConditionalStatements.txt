@@ -1,0 +1,296 @@
+✅ 1. IF Statement
+✔ What is it?
+
+The simplest conditional statement.
+Executes a block only when condition is true.
+
+✔ When to use?
+
+When you want to run code for one specific condition.
+
+✔ What can be the condition?
+
+boolean expression
+
+comparison (==, >, <, etc.)
+
+method returning boolean
+
+logical operators (&&, ||)
+
+✔ Example Program
+public class IfDemo {
+    public static void main(String[] args) {
+        int age = 20;
+
+        if (age >= 18) {
+            System.out.println("Eligible to vote");
+        }
+    }
+}
+
+✅ 2. IF–ELSE Statement
+✔ What is it?
+
+Provides two-way decision.
+
+✔ When to use?
+
+When you want either this OR that.
+
+✔ Example Program
+public class IfElseDemo {
+    public static void main(String[] args) {
+        int marks = 50;
+
+        if (marks >= 40) {
+            System.out.println("Pass");
+        } else {
+            System.out.println("Fail");
+        }
+    }
+}
+
+✅ 3. Nested IF
+✔ What is it?
+
+IF inside another IF.
+
+✔ When to use?
+
+When conditions depend on multiple levels.
+
+✔ Example Program
+public class NestedIfDemo {
+    public static void main(String[] args) {
+        int age = 25;
+        boolean hasLicense = true;
+
+        if (age >= 18) {
+            if (hasLicense) {
+                System.out.println("You can drive");
+            }
+        }
+    }
+}
+
+✅ 4. Else-IF Ladder
+✔ What is it?
+
+Used for multiple conditions, only one block runs.
+
+✔ When to use?
+
+When you have more than two conditions such as grading, salary slabs, menu selection.
+
+✔ Example Program
+public class ElseIfLadderDemo {
+    public static void main(String[] args) {
+
+        int marks = 85;
+
+        if (marks >= 90) {
+            System.out.println("Grade A");
+        } else if (marks >= 75) {
+            System.out.println("Grade B");
+        } else if (marks >= 50) {
+            System.out.println("Grade C");
+        } else {
+            System.out.println("Fail");
+        }
+    }
+}
+
+✅ 5. Switch Case
+
+Java supports switch with:
+
+int
+
+byte
+
+short
+
+char
+
+String
+
+Enum
+
+Wrapper types (Integer, Character)
+
+final variables
+
+✔ When to use?
+
+Many conditions with exact match
+
+Cleaner than else-if ladder
+
+Menu-based programs
+
+⭐ Switch with int
+public class SwitchIntDemo {
+    public static void main(String[] args) {
+        int day = 3;
+
+        switch (day) {
+            case 1: System.out.println("Monday"); break;
+            case 2: System.out.println("Tuesday"); break;
+            case 3: System.out.println("Wednesday"); break;
+            default: System.out.println("Invalid");
+        }
+    }
+}
+
+⭐ Switch with char
+public class SwitchCharDemo {
+    public static void main(String[] args) {
+        char grade = 'A';
+
+        switch (grade) {
+            case 'A': System.out.println("Excellent"); break;
+            case 'B': System.out.println("Good"); break;
+            default: System.out.println("Average");
+        }
+    }
+}
+
+⭐ Switch with String
+
+(VERY IMPORTANT – asked in many interviews)
+
+public class SwitchStringDemo {
+    public static void main(String[] args) {
+        String role = "ADMIN";
+
+        switch (role) {
+            case "ADMIN":
+                System.out.println("Full Access");
+                break;
+            case "USER":
+                System.out.println("Limited Access");
+                break;
+            default:
+                System.out.println("Guest");
+        }
+    }
+}
+
+⭐ Switch with Enum
+
+(Interview favorite question)
+
+enum Level { LOW, MEDIUM, HIGH }
+
+public class SwitchEnumDemo {
+    public static void main(String[] args) {
+        Level l = Level.MEDIUM;
+
+        switch (l) {
+            case LOW: System.out.println("Low Level"); break;
+            case MEDIUM: System.out.println("Medium Level"); break;
+            case HIGH: System.out.println("High Level");
+        }
+    }
+}
+
+⭐ Switch with Final variable
+public class SwitchFinalDemo {
+    public static void main(String[] args) {
+        final int CHOICE = 2;
+
+        switch (CHOICE) {
+            case 1: System.out.println("One"); break;
+            case 2: System.out.println("Two"); break;
+        }
+    }
+}
+
+🔥 ALL Conditional Statements in ONE Code (Premium Interview Version)
+public class AllConditionDemo {
+
+    public static void main(String[] args) {
+
+        int number = 75;
+
+        // IF
+        if (number > 0)
+            System.out.println("Positive Number");
+
+        // IF-ELSE
+        if (number % 2 == 0)
+            System.out.println("Even");
+        else
+            System.out.println("Odd");
+
+        // NESTED IF
+        if (number > 50) {
+            if (number < 100) {
+                System.out.println("Between 50 and 100");
+            }
+        }
+
+        // ELSE-IF LADDER
+        if (number >= 90)
+            System.out.println("A Grade");
+        else if (number >= 60)
+            System.out.println("B Grade");
+        else
+            System.out.println("C Grade");
+
+        // SWITCH CASE
+        int option = 3;
+        switch (option) {
+            case 1: System.out.println("Option One"); break;
+            case 2: System.out.println("Option Two"); break;
+            case 3: System.out.println("Option Three"); break;
+            default: System.out.println("Invalid Option");
+        }
+    }
+}
+
+📝 Top Interview Questions & Answers
+Q1: Difference between if-else and switch?
+
+if-else
+
+For complex boolean conditions
+
+Supports ranges
+
+Supports relational/logical operators
+
+switch
+
+Only exact matching
+
+Faster when many options
+
+Supports int, char, String, Enum
+
+Q2: Can switch handle ranges like 1–10?
+
+❌ No
+You must use if-else.
+
+Q3: Can we use boolean in switch?
+
+❌ No.
+Java does NOT allow boolean in switch.
+
+Q4: Why String is allowed in switch?
+
+Since Java 7
+→ For cleaner code and fast string comparison using hashing.
+
+Q5: Can we use expressions inside switch case labels?
+
+Only constant expressions allowed.
+
+final int A = 10;
+final int B = 20;
+
+switch(x) {
+    case A + B:  // allowed
+}

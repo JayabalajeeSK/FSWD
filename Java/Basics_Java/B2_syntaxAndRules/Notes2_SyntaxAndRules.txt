@@ -1,0 +1,583 @@
+Java Syntax & Basic Rules
+
+Java syntax is the set of rules which defines how a Java program is written and executed. It includes keywords, identifiers, literals, comments, input/output, etc.
+
+1️⃣ Keywords in Java
+Definition
+
+Keywords are reserved words in Java that have a special meaning and cannot be used as identifiers (variable names, class names, etc.)
+
+List of Java Keywords (Java 8+)
+abstract, assert, boolean, break, byte, case, catch, char, class, const, continue,
+default, do, double, else, enum, extends, final, finally, float, for, goto, if,
+implements, import, instanceof, int, interface, long, native, new, package, private,
+protected, public, return, short, static, strictfp, super, switch, synchronized,
+this, throw, throws, transient, try, void, volatile, while
+
+Example Usage
+public class KeywordExample 
+{
+    public static void main(String[] args) 
+    {
+        int num = 10; // 'int' is a keyword
+        if (num > 5) 
+        {
+            System.out.println("Number is greater than 5");
+        }
+    }
+}
+
+
+Interview Tip:
+
+Q: Can you use a keyword as a variable name?
+A: No, keywords are reserved.
+
+2️⃣ Identifiers in Java
+Definition
+
+Identifiers are names given to classes, methods, variables, or labels in Java.
+
+Rules
+
+Can contain letters, digits, _, and $.
+Must start with a letter, _ or $.
+Cannot be a keyword.
+Case-sensitive (myVar ≠ MyVar).
+
+Naming Conventions
+Identifier	Convention
+Class Name	PascalCase (MyClass)
+Variable	camelCase (myVariable)
+Constant	UPPERCASE (PI = 3.14)
+Method	camelCase (calculateSum())
+Example
+public class IdentifierExample 
+{
+    public static void main(String[] args) 
+    {
+        int age = 25;
+        final double PI = 3.1416;
+        System.out.println("Age = " + age + ", PI = " + PI);
+    }
+}
+
+
+Interview Tip:
+
+Q: Are Java identifiers case-sensitive?
+A: Yes, myVar and MyVar are different.
+
+3️⃣ Literals in Java
+Definition
+
+Literals are constant values directly assigned in the program.
+
+Types of Literals
+Type	Example
+Integer	int a = 10;
+Floating-point	float f = 10.5f; double d = 20.5;
+Character	char c = 'A';
+Boolean	boolean flag = true;
+String	String s = "Hello Java";
+Example
+public class LiteralExample 
+{
+    public static void main(String[] args) 
+    {
+        int age = 30;
+        float salary = 2500.50f;
+        char grade = 'A';
+        boolean isPass = true;
+        String name = "Jayabalajee";
+
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age + ", Salary: " + salary);
+        System.out.println("Grade: " + grade + ", Passed: " + isPass);
+    }
+}
+
+
+Interview Tip:
+
+Q: Can we assign integer to float variable without suffix f?
+A: Yes, e.g., float x = 10; is valid. But decimal literals must have f (10.5f).
+
+4️⃣ Comments in Java
+Types
+
+Single-line comment: //
+
+Multi-line comment: /* ... */
+
+Documentation comment: /** ... */ (used for JavaDoc)
+
+Examples
+public class CommentExample 
+{
+    public static void main(String[] args) 
+    {
+        // Single line comment
+        System.out.println("Hello World");
+
+        /*
+           Multi-line comment
+           Explaining the program
+        */
+        System.out.println("Java is easy!");
+
+        /**
+         * Documentation comment
+         * Used to generate JavaDoc
+         */
+        System.out.println("Documentation comment example");
+    }
+}
+
+
+Interview Tip:
+
+Q: Which comment is used for generating API documentation?
+A: Documentation comment (/** ... */).
+
+5️⃣ Input in Java (Scanner Class)
+Definition
+
+Scanner class is used to read input from the user.
+
+Syntax
+import java.util.Scanner;
+
+Scanner sc = new Scanner(System.in);
+
+Example
+import java.util.Scanner;
+
+public class InputExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter your age: ");
+        int age = sc.nextInt();
+
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+
+Interview Tip:
+
+Q: How to read a float value using Scanner?
+A: float salary = sc.nextFloat();
+
+6️⃣ Output in Java (System.out.println)
+Definition
+
+System.out.println() prints output with newline.
+System.out.print() prints without newline.
+
+Example
+public class OutputExample {
+    public static void main(String[] args) {
+        System.out.println("Hello Java!"); // prints with newline
+        System.out.print("This is ");
+        System.out.print("on the same line.");
+    }
+}
+
+
+Interview Tip:
+
+Q: Difference between print and println?
+A: println moves to a new line; print doesn’t.
+
+7️⃣ Real-Time Interview Programs
+Program 1: Read name and age
+import java.util.Scanner;
+
+public class UserInput {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter name: ");
+        String name = sc.nextLine();
+        System.out.print("Enter age: ");
+        int age = sc.nextInt();
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+Program 2: Read 2 numbers and print sum
+import java.util.Scanner;
+
+public class SumNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        int a = sc.nextInt();
+        System.out.print("Enter second number: ");
+        int b = sc.nextInt();
+        System.out.println("Sum = " + (a + b));
+    }
+}
+
+Program 3: Demonstrate all literals
+public class LiteralDemo {
+    public static void main(String[] args) {
+        int i = 100;
+        float f = 10.5f;
+        double d = 20.55;
+        char c = 'J';
+        boolean flag = true;
+        String s = "Java";
+
+        System.out.println(i + ", " + f + ", " + d + ", " + c + ", " + flag + ", " + s);
+    }
+}
+
+✅ Summary – Interview Notes
+
+Keywords are reserved words → cannot be used as identifiers.
+
+Identifiers must follow rules & naming conventions.
+
+Literals = constant values, types: int, float, char, boolean, String.
+
+Comments → single-line, multi-line, documentation.
+
+Input → Scanner class. Output → System.out.println().
+
+Real-time interview programs: sum of numbers, user input, literals demo.
+
+Scanner Class in Java
+Definition
+
+Scanner is a class in the java.util package` used to read input from various sources like:
+
+Keyboard (System.in)
+
+Files
+
+Strings
+
+It is commonly used in console-based Java programs to read user input.
+
+Importing Scanner
+import java.util.Scanner;
+
+Creating a Scanner Object
+Scanner sc = new Scanner(System.in); // Read input from keyboard
+
+1️⃣ Scanner Methods for Different Data Types
+
+| Method          | Data Type            | Example                            |
+| --------------- | -------------------- | ---------------------------------- |
+| `nextInt()`     | int                  | `int a = sc.nextInt();`            |
+| `nextFloat()`   | float                | `float f = sc.nextFloat();`        |
+| `nextDouble()`  | double               | `double d = sc.nextDouble();`      |
+| `nextLine()`    | String (entire line) | `String s = sc.nextLine();`        |
+| `next()`        | String (single word) | `String s = sc.next();`            |
+| `nextBoolean()` | boolean              | `boolean flag = sc.nextBoolean();` |
+| `nextLong()`    | long                 | `long l = sc.nextLong();`          |
+| `nextShort()`   | short                | `short sh = sc.nextShort();`       |
+| `nextByte()`    | byte                 | `byte b = sc.nextByte();`          |
+
+3️⃣ Important Points about Scanner
+
+next() vs nextLine()
+
+next() → reads only one word.
+
+nextLine() → reads entire line including spaces.
+
+String s1 = sc.next();      // "Hello"
+String s2 = sc.nextLine();  // "Hello World"
+
+
+nextLine() after nextInt() issue
+
+Problem: Scanner doesn’t consume the newline \n.
+
+Fix: Add an extra sc.nextLine() after reading numbers.
+
+int age = sc.nextInt();
+sc.nextLine(); // consume leftover newline
+String name = sc.nextLine();
+
+
+Closing Scanner
+
+Always close Scanner to free resources:
+
+sc.close();
+
+4️⃣ Real-Time Interview Programs Using Scanner
+Program 1: Sum of two numbers
+import java.util.Scanner;
+
+public class SumExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int a = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = sc.nextInt();
+
+        System.out.println("Sum = " + (a + b));
+        sc.close();
+    }
+}
+
+Program 2: Reading full name with spaces
+import java.util.Scanner;
+
+public class FullName {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter your full name: ");
+        String fullName = sc.nextLine();
+
+        System.out.println("Hello, " + fullName);
+        sc.close();
+    }
+}
+
+Program 3: Average of three numbers
+import java.util.Scanner;
+
+public class AverageExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter 3 numbers: ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+
+        float avg = (a + b + c) / 3.0f;
+        System.out.println("Average = " + avg);
+
+        sc.close();
+    }
+}
+
+5️⃣ Common Interview Questions about Scanner
+
+Q: Difference between next() and nextLine()?
+A: next() reads a single word; nextLine() reads the whole line including spaces.
+
+Q: How to fix the issue of nextLine() skipping after nextInt()?
+A: Add an extra sc.nextLine() to consume the leftover newline.
+
+Q: Can Scanner read from files?
+A: Yes, e.g., Scanner sc = new Scanner(new File("data.txt"));
+
+Q: Is Scanner class thread-safe?
+A: No, it is not synchronized.
+
+Q: What package does Scanner belong to?
+A: java.util.Scanner
+//////////////////////////////////////////
+
+1️⃣ What is Thread-Safety?
+Definition
+
+A class or method is thread-safe if it works correctly when accessed by multiple threads simultaneously without producing incorrect results or data corruption.
+
+Key Points
+
+Thread-safe means shared data is safe from concurrent access issues.
+
+If a class is not thread-safe, multiple threads modifying data can cause race conditions or inconsistent results.
+
+Example of Thread-Safety Issue
+class Counter {
+    int count = 0;
+
+    public void increment() {
+        count++;
+    }
+}
+
+public class ThreadSafetyDemo {
+    public static void main(String[] args) throws InterruptedException {
+        Counter counter = new Counter();
+
+        Runnable task = () -> {
+            for (int i = 0; i < 1000; i++) {
+                counter.increment(); // not thread-safe
+            }
+        };
+
+        Thread t1 = new Thread(task);
+        Thread t2 = new Thread(task);
+
+        t1.start();
+        t2.start();
+
+        t1.join();
+        t2.join();
+
+        System.out.println("Count = " + counter.count);
+    }
+}
+
+
+Output:
+Count may not be 2000 because both threads are modifying count at the same time → race condition.
+
+2️⃣ Synchronized in Java (Thread-Safe)
+Definition
+
+synchronized keyword ensures that only one thread can access a method or block at a time. This prevents race conditions.
+
+Syntax
+
+Synchronized method
+
+public synchronized void increment() {
+    count++;
+}
+
+
+Synchronized block
+
+public void increment() {
+    synchronized(this) {
+        count++;
+    }
+}
+
+Example: Thread-Safe Counter
+class Counter {
+    int count = 0;
+
+    public synchronized void increment() {
+        count++;
+    }
+}
+
+public class ThreadSafeDemo {
+    public static void main(String[] args) throws InterruptedException {
+        Counter counter = new Counter();
+
+        Runnable task = () -> {
+            for (int i = 0; i < 1000; i++) {
+                counter.increment();
+            }
+        };
+
+        Thread t1 = new Thread(task);
+        Thread t2 = new Thread(task);
+
+        t1.start();
+        t2.start();
+
+        t1.join();
+        t2.join();
+
+        System.out.println("Count = " + counter.count);
+    }
+}
+
+
+Output:
+
+Count = 2000
+
+
+✅ Now it is thread-safe because of synchronized.
+
+3️⃣ Non-Synchronized (Not Thread-Safe)
+
+If you don’t use synchronized, multiple threads can interfere with each other.
+
+class Counter {
+    int count = 0;
+
+    public void increment() {
+        count++; // not synchronized
+    }
+}
+
+
+Multiple threads can read-modify-write at the same time → incorrect final value.
+
+Example: t1 reads count=100, t2 reads count=100, both increment → count=101 instead of 102.
+
+4️⃣ Synchronized vs Non-Synchronized (Comparison)
+Feature	Synchronized	Non-Synchronized
+Thread-Safe	✅ Yes	❌ No
+Performance	Slower (locks)	Faster
+Usage	When multiple threads access shared data	Single-threaded or independent threads
+Example	synchronized void increment() {...}	void increment() {...}
+5️⃣ Important Points About synchronized
+
+Locking mechanism:
+
+Object-level lock for instance methods → synchronized(this)
+
+Class-level lock for static methods → synchronized(ClassName.class)
+
+Deadlock Risk:
+
+If two threads wait for each other’s locks, a deadlock occurs.
+
+Reentrant:
+
+A thread can enter a synchronized block multiple times without blocking itself.
+
+6️⃣ Real-Time Interview Example: Bank Account
+class BankAccount {
+    private int balance = 1000;
+
+    public synchronized void deposit(int amount) {
+        balance += amount;
+        System.out.println("Deposited: " + amount + ", Balance: " + balance);
+    }
+
+    public synchronized void withdraw(int amount) {
+        balance -= amount;
+        System.out.println("Withdrawn: " + amount + ", Balance: " + balance);
+    }
+}
+
+public class BankDemo {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount();
+
+        Runnable task1 = () -> account.deposit(500);
+        Runnable task2 = () -> account.withdraw(300);
+
+        Thread t1 = new Thread(task1);
+        Thread t2 = new Thread(task2);
+
+        t1.start();
+        t2.start();
+    }
+}
+
+
+✅ Using synchronized, balance remains consistent even with multiple threads.
+
+7️⃣ Interview Questions
+
+Q: What is thread-safe?
+A: A code that works correctly when multiple threads access it concurrently.
+
+Q: Difference between synchronized and non-synchronized?
+A: Synchronized → thread-safe, slower; Non-synchronized → not thread-safe, faster.
+
+Q: Can static methods be synchronized?
+A: Yes, synchronized static methods lock the class, not the object.
+
+Q: Can a thread enter a synchronized block it already holds?
+A: Yes, synchronized is reentrant.
+
+Q: Drawbacks of synchronized?
+A: Performance overhead, risk of deadlocks.

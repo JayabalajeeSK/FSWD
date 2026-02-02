@@ -1,0 +1,28 @@
+long id
+String title
+String Description
+Boolean isCompleted
+
+dependencies - Web, Jpa, MySQL, Lombok, Devtools
+
+@SpringBootApplication
+@Entity
+@Table(name = "todos")
+
+
+
+serial no 1, 2, 3
+
+if i delete 1 ,2 become 1 and 3 become 2
+
+if i delete 2 ,1 remains 1 and 3 become 2
+
+if i delete 3 ,1 remains 1 and 2 remains 2
+
+after adding new todo, that should continue from last
+
+
+https://regexr.com/ 
+
+
+5 - eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYXlhYmFsYWplZTA1QGdtYWlsLmNvbSIsImlhdCI6MTc2OTUwOTExMCwiZXhwIjoxNzcwMTEzOTEwfQ.QmQTrbe6Z1vqulQ7OaZmCk3W4aAenGfcaX4f1_pwMY0

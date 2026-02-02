@@ -1,0 +1,578 @@
+Data Types in Java
+
+Java data types are divided into two categories:
+
+Primitive Data Types – predefined by Java, 8 types
+
+Non-Primitive Data Types – user-defined or reference types
+
+| Type        | Size    | Default Value | Range                | Example                |
+| ----------- | ------- | ------------- | -------------------- | ---------------------- |
+| **byte**    | 1 byte  | 0             | -128 to 127          | `byte b = 100;`        |
+| **short**   | 2 bytes | 0             | -32,768 to 32,767    | `short s = 1000;`      |
+| **int**     | 4 bytes | 0             | -2³¹ to 2³¹-1        | `int i = 10000;`       |
+| **long**    | 8 bytes | 0L            | -2⁶³ to 2⁶³-1        | `long l = 100000L;`    |
+| **float**   | 4 bytes | 0.0f          | ±3.4e−38             | `float f = 10.5f;`     |
+| **double**  | 8 bytes | 0.0d          | ±1.7e−308            | `double d = 20.55;`    |
+| **char**    | 2 bytes | '\u0000'      | '\u0000' to '\uffff' | `char c = 'A';`        |
+| **boolean** | 1 bit   | false         | true/false           | `boolean flag = true;` |
+
+public class PrimitiveDemo 
+{
+    public static void main(String[] args) 
+    {
+        byte b = 100;
+        short s = 1000;
+        int i = 10000;
+        long l = 100000L;
+        float f = 10.5f;
+        double d = 20.55;
+        char c = 'J';
+        boolean flag = true;
+
+        System.out.println("byte: " + b);
+        System.out.println("short: " + s);
+        System.out.println("int: " + i);
+        System.out.println("long: " + l);
+        System.out.println("float: " + f);
+        System.out.println("double: " + d);
+        System.out.println("char: " + c);
+        System.out.println("boolean: " + flag);
+    }
+}
+// byte: 100
+// short: 1000
+// int: 10000
+// long: 100000
+// float: 10.5
+// double: 20.55
+// char: J
+// boolean: true
+
+2️⃣ Non-Primitive Data Types (Reference Types)
+
+These store references to objects, not the actual value.
+
+1. String
+
+Immutable sequence of characters.
+
+Stored as object (java.lang.String).
+
+String name = "Jay";
+System.out.println("Name: " + name);
+
+
+Interview Tip:
+
+Q: Difference between String, StringBuilder, and StringBuffer?
+A: String → immutable, StringBuilder → mutable (non-thread-safe), StringBuffer → mutable & thread-safe
+
+2. Arrays
+
+Fixed-size collection of same type elements.
+
+int[] arr = {1, 2, 3, 4, 5};
+System.out.println("First element: " + arr[0]);
+
+
+Interview Tip:
+
+Q: Can arrays be multi-dimensional in Java?
+A: Yes, e.g., int[][] matrix = new int[3][3];
+
+3. Classes
+
+Blueprint of objects.
+
+Contains fields (variables) and methods.
+
+class Student {
+    String name;
+    int age;
+
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+public class ClassDemo {
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.name = "Jay";
+        s.age = 25;
+        s.display();
+    }
+}
+
+4. Interfaces
+
+Abstract type used to define methods without implementation.
+
+Classes implement interfaces.
+
+interface Vehicle {
+    void speed();
+}
+
+class Car implements Vehicle {
+    public void speed() {
+        System.out.println("Car speed is 100 km/h");
+    }
+}
+
+public class InterfaceDemo {
+    public static void main(String[] args) {
+        Car c = new Car();
+        c.speed();
+    }
+}
+
+
+Interview Tip:
+
+Q: Can an interface have variables?
+A: Yes, all are public static final by default.
+
+5. Enums
+
+Special type to define constants.
+
+enum Day { MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY }
+
+public class EnumDemo {
+    public static void main(String[] args) {
+        Day today = Day.MONDAY;
+
+        if (today == Day.MONDAY) {
+            System.out.println("Start of the week");
+        }
+    }
+}
+
+
+Interview Tip:
+
+Q: Difference between final and enum?
+A: final is for constants, enum is type-safe constant group.
+
+3️⃣ Major Interview Programs Using Data Types
+Program 1: Swap Two Numbers
+import java.util.Scanner;
+public class SwapNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a: ");
+        int a = sc.nextInt();
+        System.out.print("Enter b: ");
+        int b = sc.nextInt();
+
+        a = a + b;
+        b = a - b;
+        a = a - b;
+
+        System.out.println("After swapping: a=" + a + ", b=" + b);
+        sc.close();
+    }
+}
+
+Program 2: Max of Array
+public class MaxArray {
+    public static void main(String[] args) {
+        int[] arr = {10, 50, 30, 70, 20};
+        int max = arr[0];
+
+        for(int i : arr) {
+            if(i > max) max = i;
+        }
+
+        System.out.println("Maximum: " + max);
+    }
+}
+
+Program 3: Using Enum
+enum Level { LOW, MEDIUM, HIGH }
+
+public class EnumTest {
+    public static void main(String[] args) {
+        Level l = Level.HIGH;
+        switch(l) {
+            case LOW: System.out.println("Low level"); break;
+            case MEDIUM: System.out.println("Medium level"); break;
+            case HIGH: System.out.println("High level"); break;
+        }
+    }
+}
+
+Program 4: Class & Object Example
+class Employee {
+    String name;
+    double salary;
+
+    void display() {
+        System.out.println(name + " earns " + salary);
+    }
+}
+
+public class EmployeeDemo {
+    public static void main(String[] args) {
+        Employee e = new Employee();
+        e.name = "Jay";
+        e.salary = 35000.50;
+        e.display();
+    }
+}
+
+4️⃣ Common Interview Questions
+
+Q: Difference between primitive and non-primitive types?
+A: Primitive → predefined, stores actual value; Non-primitive → user-defined/reference, stores memory address.
+
+Q: Default value of primitive data types?
+A: int, byte, short, long → 0; float, double → 0.0; char → '\u0000'; boolean → false
+
+Q: Are Strings mutable or immutable?
+A: Strings are immutable in Java.
+
+Q: Can an interface have method body?
+A: From Java 8 → yes, default & static methods can have body.
+
+Q: Difference between enum and final constants?
+A: Enum is type-safe group of constants; final → single constant.
+
+| Non-Primitive Type      | Default Value | Notes                                               |
+| ----------------------- | ------------- | --------------------------------------------------- |
+| **String**              | `null`        | Reference type → points to null if not initialized  |
+| **Array**               | `null`        | Reference → actual array object needs `new` keyword |
+| **Class Object**        | `null`        | Reference → must create instance with `new`         |
+| **Interface Reference** | `null`        | Points to object implementing interface             |
+| **Enum**                | `null`        | Enum reference not initialized points to null       |
+
+Interview Tips:
+
+Q: What is the default value of a reference variable?
+A: null, until it points to an actual object.
+
+Q: Are non-primitive types initialized automatically?
+A: Yes, if declared as instance variables. Local reference variables must be initialized manually.
+
+Q: Difference in default values of primitive vs non-primitive?
+A: Primitives → predefined like 0, false; Non-primitives → null.
+
+
+Type Casting in Java
+Definition
+
+Type Casting in Java is converting a variable from one data type to another.
+
+Automatic (Widening / Implicit)
+
+Manual (Narrowing / Explicit)
+
+1️⃣ Types of Type Casting
+A. Widening Casting (Implicit / Upcasting)
+
+Converts smaller data type → larger data type
+
+Done automatically by Java
+
+No data loss
+
+| From  | To                              |
+| ----- | ------------------------------- |
+| byte  | short, int, long, float, double |
+| short | int, long, float, double        |
+| char  | int, long, float, double        |
+| int   | long, float, double             |
+| long  | float, double                   |
+| float | double                          |
+
+Q: Can widening casting cause data loss?
+A: No, widening is safe.
+
+B. Narrowing Casting (Explicit / Downcasting)
+
+Converts larger data type → smaller data type
+
+Done manually using parentheses
+
+Data loss is possible
+
+| From   | To                                  |
+| ------ | ----------------------------------- |
+| double | float, long, int, short, byte, char |
+| float  | long, int, short, byte, char        |
+| long   | int, short, byte, char              |
+| int    | short, byte, char                   |
+| short  | byte, char                          |
+| char   | byte, short                         |
+
+Character Casting
+char → int : gives ASCII value
+
+int → char : converts ASCII code to character
+
+Boolean Casting
+Boolean cannot be cast to numeric types
+
+Only true/false is allowed
+
+Attempting casting → compile-time error
+
+boolean flag = true;
+// int i = (int) flag;  // ❌ Not allowed
+| Conversion                             | Implicit Allowed? | Explicit Needed? | Notes     |
+| -------------------------------------- | ----------------- | ---------------- | --------- |
+| byte → short, int, long, float, double | ✅                 | ❌                | widening  |
+| short → int, long, float, double       | ✅                 | ❌                | widening  |
+| char → int, long, float, double        | ✅                 | ❌                | widening  |
+| int → long, float, double              | ✅                 | ❌                | widening  |
+| long → float, double                   | ✅                 | ❌                | widening  |
+| float → double                         | ✅                 | ❌                | widening  |
+| double → float, long, int, short, byte | ❌                 | ✅                | narrowing |
+| int → byte, short, char                | ❌                 | ✅                | narrowing |
+| char → int, long, float, double        | ✅                 | ❌                | widening  |
+
+
+Interview Questions
+
+Q: Difference between implicit and explicit casting?
+A: Implicit → automatic, smaller → larger (widening), no data loss;
+Explicit → manual, larger → smaller (narrowing), data loss possible.
+
+Q: Can boolean be cast to int?
+A: ❌ No, boolean cannot be cast.
+
+Q: What happens when narrowing exceeds range?
+A: Value wraps around or truncates (data loss).
+
+Q: char → int conversion gives what?
+A: ASCII value of the character.
+
+Q: int → byte 130?
+A: 130 → 8-bit byte → wraps → result = -126
+
+1️⃣ Implicit Type Casting (Widening / Upcasting)
+
+Definition: Java automatically converts smaller data type → larger data type.
+Safe conversion, no data loss.
+
+Order (Implicit / Widening)
+byte → short → int → long → float → double
+char → int → long → float → double
+short → int → long → float → double
+
+
+Note: byte → char ❌ not allowed implicitly
+
+char is unsigned, short is signed
+
+Diagram: Implicit Conversion
+byte
+  ↓
+short
+  ↓
+int
+  ↓
+long
+  ↓
+float
+  ↓
+double
+
+char
+  ↓
+int
+  ↓
+long
+  ↓
+float
+  ↓
+double
+
+
+✅ Example:
+
+byte b = 10;
+int i = b;        // byte → int
+long l = i;       // int → long
+float f = l;      // long → float
+double d = f;     // float → double
+
+2️⃣ Explicit Type Casting (Narrowing / Downcasting)
+
+Definition: Manually converting larger data type → smaller data type using parentheses.
+Data loss possible.
+
+Order (Explicit / Narrowing)
+double → float → long → int → short → byte
+double → float → long → int → char
+float  → long  → int → short → byte
+long   → int   → short → byte → char
+int    → short → byte → char
+
+Diagram: Explicit Conversion
+double
+  ↓
+float
+  ↓
+long
+  ↓
+int
+  ↓
+short
+  ↓
+byte
+
+double
+  ↓
+float
+  ↓
+long
+  ↓
+int
+  ↓
+char
+
+
+Note:
+
+double → int → fractional part lost
+
+int → byte → may wrap around if out of byte range
+
+char → byte/short → explicit cast needed
+
+Examples: Explicit Conversion
+double d = 123.99;
+float f = (float) d;   // double → float
+long l = (long) f;     // float → long
+int i = (int) l;       // long → int
+byte b = (byte) i;     // int → byte
+System.out.println("double=" + d + ", float=" + f + ", long=" + l + ", int=" + i + ", byte=" + b);
+
+
+Output:
+
+double=123.99, float=123.99, long=123, int=123, byte=123
+
+| From → To      | Implicit Allowed? | Explicit Needed? |
+| -------------- | ----------------- | ---------------- |
+| byte → short   | ✅ Yes             | ❌ No             |
+| byte → int     | ✅ Yes             | ❌ No             |
+| byte → long    | ✅ Yes             | ❌ No             |
+| byte → float   | ✅ Yes             | ❌ No             |
+| byte → double  | ✅ Yes             | ❌ No             |
+| short → int    | ✅ Yes             | ❌ No             |
+| short → long   | ✅ Yes             | ❌ No             |
+| short → float  | ✅ Yes             | ❌ No             |
+| short → double | ✅ Yes             | ❌ No             |
+| char → int     | ✅ Yes             | ❌ No             |
+| char → long    | ✅ Yes             | ❌ No             |
+| char → float   | ✅ Yes             | ❌ No             |
+| char → double  | ✅ Yes             | ❌ No             |
+| int → byte     | ❌ No              | ✅ Yes            |
+| int → short    | ❌ No              | ✅ Yes            |
+| int → char     | ❌ No              | ✅ Yes            |
+| int → long     | ✅ Yes             | ❌ No             |
+| int → float    | ✅ Yes             | ❌ No             |
+| int → double   | ✅ Yes             | ❌ No             |
+| long → int     | ❌ No              | ✅ Yes            |
+| long → float   | ✅ Yes             | ❌ No             |
+| long → double  | ✅ Yes             | ❌ No             |
+| float → int    | ❌ No              | ✅ Yes            |
+| float → long   | ❌ No              | ✅ Yes            |
+| float → double | ✅ Yes             | ❌ No             |
+| double → float | ❌ No              | ✅ Yes            |
+| double → long  | ❌ No              | ✅ Yes            |
+| double → int   | ❌ No              | ✅ Yes            |
+| double → short | ❌ No              | ✅ Yes            |
+| double → byte  | ❌ No              | ✅ Yes            |
+
+
+✅ Key Interview Notes
+
+Implicit → safe, widening
+
+Explicit → manual, narrowing, possible data loss
+
+boolean → cannot be cast to/from numeric types
+
+char → int → ASCII value
+
+Widening happens automatically from smaller → bigger types, narrowing needs explicit cast
+
+If you want, I can make a visual “full conversion map” for all primitives in one diagram, with arrows for implicit & explicit conversions, which is very useful for interviews and coding tests.
+
+Do you want me to make that diagram?
+
+1️⃣ Type Promotion
+
+Automatic conversion of a smaller type to a larger type in expressions.
+
+Done by the compiler to avoid data loss during arithmetic operations.
+
+Happens implicitly, no parentheses needed.
+
+Mainly occurs in arithmetic operations, unary operators, or mixed-type expressions.
+
+Example:
+
+byte b = 10;
+byte c = 20;
+int result = b + c; // b and c promoted to int automatically
+
+
+byte + byte → int automatically (promotion)
+
+No explicit cast needed
+
+Key: happens during evaluation of expressions
+
+2️⃣ Type Casting
+
+Manual conversion of one type to another using parentheses.
+
+Can be widening (implicit) or narrowing (explicit).
+
+Narrowing casting is usually done manually to assign a larger type to a smaller type.
+
+Example:
+
+int i = 100;
+byte b = (byte) i; // explicit narrowing cast
+
+
+Key: done manually by programmer
+
+Can lead to data loss if value exceeds range
+
+| Feature           | Type Promotion                           | Type Casting                               |
+| ----------------- | ---------------------------------------- | ------------------------------------------ |
+| Definition        | Automatic type conversion in expressions | Manual type conversion by programmer       |
+| How it happens    | Implicitly                               | Explicitly (usually)                       |
+| Risk of data loss | Low, safe widening                       | Possible, especially narrowing             |
+| Where used        | Arithmetic operations, mixed types       | Assignments, expressions, type conversions |
+| Example           | `byte b + byte c → int`                  | `int i = 130; byte b = (byte)i;`           |
+
+Promotion is automatic and safe
+
+Casting is manual and may cause data loss
+
+
+
+String → char: charAt(0) gets the first character.
+
+Char → String: Character.toString(c) or String.valueOf(c)
+
+String → int: Integer.parseInt(str)
+
+Int → String: Integer.toString(num) or String.valueOf(num)
+
+String → Array: str.toCharArray()
+
+Array → String: new String(charArray)
+
+Binary → Decimal: Integer.parseInt(binaryStr, 2)
+
+Decimal → Binary: Integer.toBinaryString(decimalNum)

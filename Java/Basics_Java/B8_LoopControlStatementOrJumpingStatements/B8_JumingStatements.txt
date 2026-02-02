@@ -1,0 +1,128 @@
+✅ 1️⃣ Loop Control Statements in Java
+1. break
+
+Purpose: Terminates the nearest enclosing loop or switch immediately.
+
+When to use: When you want to exit early from a loop once a condition is met.
+
+Example: Stop searching in a list once the item is found.
+
+2. continue
+
+Purpose: Skips the current iteration of the loop and moves to the next iteration.
+
+When to use: When you want to skip certain values but continue looping.
+
+3. return
+
+Purpose: Exits from the current method immediately, optionally returning a value.
+
+When to use: When a method has found the answer or needs to exit early.
+
+4. labels
+
+Purpose: Used with break and continue to control nested loops.
+
+Syntax:
+
+labelName:
+for(...) {
+    ...
+    break labelName;
+}
+
+
+When to use: When you want to break or continue an outer loop from inside an inner loop.
+
+✅ 2️⃣ All-in-One Example Program
+public class LoopControlDemo {
+    public static void main(String[] args) {
+        System.out.println("Example of break and continue:");
+        for (int i = 1; i <= 10; i++) {
+            if (i == 5) {
+                System.out.println("Break at i = " + i);
+                break; // exits the loop when i=5
+            }
+            if (i % 2 == 0) {
+                System.out.println("Continue at i = " + i);
+                continue; // skip even numbers
+            }
+            System.out.println("i = " + i);
+        }
+
+        System.out.println("\nExample of return in a method:");
+        int number = 7;
+        checkPrime(number); // method will return early if number <= 1
+
+        System.out.println("\nExample of labels with nested loops:");
+        outer: // label
+        for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 3; j++) {
+                if (i == 2 && j == 2) {
+                    System.out.println("Breaking outer loop at i=" + i + ", j=" + j);
+                    break outer; // breaks the outer loop
+                }
+                System.out.println("i=" + i + ", j=" + j);
+            }
+        }
+    }
+
+    // Method demonstrating return
+    static void checkPrime(int n) {
+        if (n <= 1) {
+            System.out.println(n + " is not prime (returning early)");
+            return; // exit method
+        }
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                System.out.println(n + " is not prime");
+                return; // exit method
+            }
+        }
+        System.out.println(n + " is prime");
+    }
+}
+
+✅ 3️⃣ Output Example
+Example of break and continue:
+i = 1
+Continue at i = 2
+i = 3
+Continue at i = 4
+Break at i = 5
+
+Example of return in a method:
+7 is prime
+
+Example of labels with nested loops:
+i=1, j=1
+i=1, j=2
+i=1, j=3
+i=2, j=1
+Breaking outer loop at i=2, j=2
+
+✅ 4️⃣ Interview Notes
+
+break
+
+Exits nearest loop or switch.
+
+Can use with labels to exit outer loop.
+
+continue
+
+Skips current iteration.
+
+Useful for filtering data in loops.
+
+return
+
+Exits current method immediately.
+
+Commonly used in validation checks or recursive functions.
+
+labels
+
+Used with break/continue to control nested loops.
+
+Rarely used in normal code, but important in interviews for nested logic.
