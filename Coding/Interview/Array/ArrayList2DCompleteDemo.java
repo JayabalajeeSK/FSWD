@@ -91,3 +91,19 @@ public class ArrayList2DCompleteDemo {
     }
 }
 
+// 2D ArrayList: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+// Element at (0,1): 2
+// After modification: [[1, 99, 3], [4, 5, 6], [7, 8, 9]]
+// After add: [[1, 99, 3], [4, 5, 6, 10], [7, 8, 9], [11, 12]]
+// After remove: [[1, 3], [4, 5, 6, 10], [11, 12]]
+// Nested for loop:
+// 1 3
+// 4 5 6 10
+// 11 12
+// Enhanced for loop:
+// 1 3 4 5 6 10 11 12
+// ForEach:
+// 1 3 4 5 6 10 11 12
+// 2D array: [[1, 3], [4, 5, 6, 10], [11, 12]]
+// 2D ArrayList from array: [[1, 3], [4, 5, 6, 10], [11, 12]]
+// After clear: []

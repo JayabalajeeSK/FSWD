@@ -1,6 +1,5 @@
 package com.jb.third_spring_boot_app;
 
-
 public class Student {
 
     private int id;

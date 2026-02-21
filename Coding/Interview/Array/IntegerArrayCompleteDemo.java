@@ -75,4 +75,16 @@ public class IntegerArrayCompleteDemo {
                 Arrays.toString(backArray));
     }
 }
-
+// Length: 4
+// Sorted: [10, 20, 30, 40]
+// Binary Search (30): 2
+// Copy: [10, 20, 30, 40]
+// Equals: true
+// Filled: [99, 99, 99, 99, 99]
+// 10 20 30 40
+// 10 20 30 40
+// 10203040
+// List1: [10, 20, 30, 40]
+// List2: [10, 20, 30, 40]
+// List3: [10, 20, 30, 40]
+// List ? Integer[]: [10, 20, 30, 40]

@@ -31,7 +31,8 @@ public class DequeStackAllMethods {
 
         Iterator<Integer> it = stack.iterator();
         System.out.print("Elements: ");
-        while (it.hasNext()) {
+        while (it.hasNext()) 
+        {
             System.out.print(it.next() + " ");
         }
 
@@ -39,3 +40,15 @@ public class DequeStackAllMethods {
         System.out.println("\nAfter clear: " + stack);
     }
 }
+// Stack: [30, 20, 10]
+// Peek: 30
+// Pop: 30
+// After addFirst & offerFirst: [50, 40, 20, 10]
+// PeekFirst: 50
+// PollFirst: 50
+// RemoveFirst: 40
+// Contains 20: true
+// Size: 2
+// Is Empty: false
+// Elements: 20 10
+// After clear: []

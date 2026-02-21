@@ -9,7 +9,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/students")
-public class StudentController {
+public class StudentController 
+{
 
     @Autowired
     private StudentService studentService;
@@ -47,10 +48,12 @@ public class StudentController {
         if (studentOptional.isPresent()) 
         {
             Student student = studentOptional.get();
+
             student.setName(studentDetails.getName());
             student.setEmail(studentDetails.getEmail());
             student.setCourse(studentDetails.getCourse());
             student.setAge(studentDetails.getAge());
+
             return new ResponseEntity<>(studentService.updateStudent(student), HttpStatus.OK);
         } 
         else 
@@ -79,7 +82,8 @@ public class StudentController {
 	        if (studentDetails.getCourse() != null)
 	            student.setCourse(studentDetails.getCourse());
 	
-	        if (studentDetails.getAge() != null) {
+	        if (studentDetails.getAge() != null) 
+            {
 	            student.setAge(studentDetails.getAge());
 	        }
 	
@@ -108,4 +112,3 @@ public class StudentController {
         }
     }
 }
-

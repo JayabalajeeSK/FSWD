@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class StudentAuthController {
 
     @GetMapping
-    public String getStudents() {
+    public String getStudents() 
+    {
         return "Only AUTHENTICATED users can see this";
     }
 }

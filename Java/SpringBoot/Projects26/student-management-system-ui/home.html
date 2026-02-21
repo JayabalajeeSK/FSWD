@@ -8,7 +8,7 @@
 <body>
     <div class="container">
         <h2>Students</h2>
-        <button onclick="logout()">Logout</button>
+
 
         <!-- Add Student Form (hidden for non-admins) -->
         <div id="addStudentDiv" style="display: none; margin-top: 20px;">
@@ -21,6 +21,7 @@
                 <button type="submit">Add Student</button>
             </form>
             <div id="addMessage"></div>
+            
         </div>
 
         <table id="studentTable">
@@ -31,13 +32,16 @@
                     <th>Email</th>
                     <th>Course</th>
                     <th>Age</th>
+                    <!-- <th>Mark</th> -->
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody></tbody>
         </table>
+            <button onclick="logout()">Logout</button>
     </div>
 
     <script src="js/home.js"></script>
+    
 </body>
 </html>

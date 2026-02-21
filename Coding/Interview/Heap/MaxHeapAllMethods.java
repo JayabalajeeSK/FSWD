@@ -68,3 +68,18 @@ public class MaxHeapAllMethods {
         System.out.println("After clear: " + maxHeap);
     }
 }
+// Max Heap: [40, 30, 20, 10]
+// Peek: 40
+// Element: 40
+// Poll: 40
+// Remove: 30
+// Size: 2
+// Contains 20: true
+// Is Empty: false
+// Iterating: 20 10
+// Array: [20, 10]
+// After addAll: [200, 100, 20, 10]
+// ContainsAll temp: true
+// After removeAll: [20, 10]
+// After retainAll: [500]
+// After clear: []

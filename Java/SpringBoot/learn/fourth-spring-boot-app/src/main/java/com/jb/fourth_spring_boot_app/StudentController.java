@@ -36,39 +36,50 @@ public class StudentController {
     public ResponseEntity<Student> getById(@PathVariable int id) 
     {
         Student student = service.getStudentById(id);
-        if (student != null) {
+        if (student != null) 
+        {
             return ResponseEntity.ok(student);
-        } else {
+        } 
+        else 
+        {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 
     // ---------------- PUT - Update ----------------
     @PutMapping("/update/{id}")
-    public ResponseEntity<String> update(@PathVariable int id, @RequestBody Student student) {
+    public ResponseEntity<String> update(@PathVariable int id, @RequestBody Student student) 
+    {
         int updatedRows = service.updateStudent(id, student);
         if (updatedRows > 0) 
         {
             return ResponseEntity.ok("Student updated successfully");
-        } else {
+        } 
+        else 
+        {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Student not found");
         }
     }
 
     // ---------------- DELETE ----------------
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> delete(@PathVariable int id) {
+    public ResponseEntity<String> delete(@PathVariable int id) 
+    {
         int deletedRows = service.deleteStudent(id);
-        if (deletedRows > 0) {
+        if (deletedRows > 0) 
+        {
             return ResponseEntity.ok("Student deleted successfully");
-        } else {
+        } 
+        else 
+        {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Student not found");
         }
     }
 
     // ---------------- OPTIONAL: GET BY NAME ----------------
     @GetMapping("/name/{name}")
-    public ResponseEntity<List<Student>> getByName(@PathVariable String name) {
+    public ResponseEntity<List<Student>> getByName(@PathVariable String name) 
+    {
         List<Student> students = service.getStudentsByName(name);
         return ResponseEntity.ok(students);
     }

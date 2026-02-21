@@ -4,7 +4,8 @@ import java.util.Stack;
 import java.util.Enumeration;
 
 public class StackAllMethods {
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
 
         Stack<Integer> stack = new Stack<>();
 
@@ -46,7 +47,8 @@ public class StackAllMethods {
         // Enumeration
         Enumeration<Integer> e = stack.elements();
         System.out.print("Elements: ");
-        while (e.hasMoreElements()) {
+        while (e.hasMoreElements()) 
+        {
             System.out.print(e.nextElement() + " ");
         }
 
@@ -54,3 +56,22 @@ public class StackAllMethods {
         System.out.println("\nAfter clear: " + stack);
     }
 }
+// Stack: [10, 20, 30]
+// Peek: 30
+// Pop: 30
+// Search 10: 2
+// Empty: false
+// After add: [10, 50, 20, 40]
+// Get index 1: 50
+// After set: [10, 99, 20, 40]
+// After remove object: [10, 20, 40]
+// After remove index: [20, 40]
+// Contains 20: true
+// Size: 2
+// Capacity: 10
+// Is Empty: false
+// First Element: 20
+// Last Element: 40
+// Index Of 20: 0
+// Elements: 20 40
+// After clear: []

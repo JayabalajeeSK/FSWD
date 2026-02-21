@@ -127,7 +127,8 @@ public class StringAllMethodsDemo {
         // ===============================
         String[][] str2D = {{"A","B"},{"C","D"}};
         System.out.println("2D String array: " + Arrays.deepToString(str2D));
-        for(String[] row : str2D){
+        for(String[] row : str2D)
+        {
             for(String x : row) System.out.print(x+" ");
             System.out.println();
         }
@@ -145,4 +146,49 @@ public class StringAllMethodsDemo {
         System.out.println("List of Lists → 2D String array: " + Arrays.deepToString(back2D));
     }
 }
-
+// s1: Hello World, s2: Java Programming, s3: Test, s4: ABC, s5: 12345, s6: A-B-C
+// Length: 11
+// Char at 0: H
+// Substring(0,5): Hello
+// Substring(6): World
+// Concat: Hello World!!!
+// Uppercase: HELLO WORLD
+// Lowercase: java programming
+// Trim: 'hello'
+// Replace char: Hexxo Worxd
+// Replace sequence: Hello Java
+// ReplaceAll regex: abcXXX
+// ReplaceFirst regex: XYZ123abc
+// StartsWith 'He'? true
+// EndsWith 'ld'? true
+// Contains 'World'? true
+// IndexOf 'o': 4
+// LastIndexOf 'o': 7
+// IndexOf 'l' from 3: 3
+// Equals: true
+// EqualsIgnoreCase: true
+// CompareTo: -32
+// CompareToIgnoreCase: 0
+// ContentEquals (StringBuffer): true
+// Split: [Apple, Banana, Cherry]
+// Join: Apple | Banana | Cherry
+// Char array: [H, e, l, l, o,  , W, o, r, l, d]
+// Byte array: [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]
+// ValueOf: 100
+// Formatted: Name: Jay, Age: 25
+// isEmpty: true
+// isBlank: true
+// CodePointAt 1: 101
+// CodePointBefore 1: 72
+// CodePointCount 0-5: 5
+// Matches regex \w+: true
+// Contains digit using regex: true
+// StringBuilder: Hello World Builder
+// StringBuffer: Java Programming Buffer
+// For loop chars: H e l l o   W o r l d 
+// Enhanced for loop chars: H e l l o   W o r l d
+// 2D String array: [[A, B], [C, D]]
+// A B
+// C D
+// 2D String ? List of Lists: [[A, B], [C, D]]
+// List of Lists ? 2D String array: [[A, B], [C, D]]

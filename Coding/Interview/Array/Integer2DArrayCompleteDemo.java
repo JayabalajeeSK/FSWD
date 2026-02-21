@@ -5,7 +5,8 @@ import java.util.*;
 
 public class Integer2DArrayCompleteDemo 
 {
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
 
         // ===============================
         // 2D ARRAY CREATION (ALL WAYS)
@@ -42,15 +43,18 @@ public class Integer2DArrayCompleteDemo
         // ITERATION (ALL WAYS)
         // ===============================
         System.out.println("Nested for loop:");
-        for(int i=0; i<arr2.length; i++) {
-            for(int j=0; j<arr2[i].length; j++) {
+        for(int i=0; i<arr2.length; i++) 
+        {
+            for(int j=0; j<arr2[i].length; j++) 
+            {
                 System.out.print(arr2[i][j] + " ");
             }
             System.out.println();
         }
 
         System.out.println("Enhanced for loop:");
-        for(Integer[] row : arr2) {
+        for(Integer[] row : arr2) 
+        {
             for(Integer x : row)
                 System.out.print(x + " ");
             System.out.println();
@@ -76,3 +80,21 @@ public class Integer2DArrayCompleteDemo
         System.out.println("List of Lists → 2D Integer array: " + Arrays.deepToString(backArray));
     }
 }
+// Rows: 2
+// Cols (first row): 2
+// Sorted first row: [1, 2]
+// Binary Search in first row (2): 1
+// CopyOf 2D: [[1, 2], [3, 4]]
+// DeepEquals: true
+// Filled 2D: [[99, 99], [99, 99]]
+// Nested for loop:
+// 1 2
+// 3 4
+// Enhanced for loop:
+// 1 2
+// 3 4
+// Stream API:
+// [1, 2]
+// [3, 4]
+// 2D Integer array ? List of Lists: [[1, 2], [3, 4]]
+// List of Lists ? 2D Integer array: [[1, 2], [3, 4]]  

@@ -16,8 +16,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Student {
-
+public class Student 
+{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)// Auto increment
     @Column(name = "id")
@@ -35,11 +35,13 @@ public class Student {
     @Column(name = "age")
     private Integer age;
 
-    public Long getId() {
+    public Long getId() 
+    {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Long id) 
+    {
         this.id = id;
     }
 

@@ -66,3 +66,18 @@ public class MinHeapAllMethods {
         System.out.println("After clear: " + minHeap);
     }
 }
+// Min Heap: [10, 20, 30, 40]
+// Peek: 10
+// Element: 10
+// Poll: 10
+// Remove: 20
+// Size: 2
+// Contains 30: true
+// Is Empty: false
+// Iterating: 30 40
+// Array: [30, 40]
+// After addAll: [5, 15, 30, 40]
+// ContainsAll temp: true
+// After removeAll: [30, 40]
+// After retainAll: [50]
+// After clear: []

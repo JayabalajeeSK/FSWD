@@ -7,8 +7,8 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table
-public class Student {
-
+public class Student 
+{
 	@Id
 	@GeneratedValue
     private Integer id;

@@ -33,7 +33,8 @@ public class QueueUsingLinkedList {
         // Iterator
         Iterator<Integer> it = queue.iterator();
         System.out.print("Iterating: ");
-        while (it.hasNext()) {
+        while (it.hasNext()) 
+        {
             System.out.print(it.next() + " ");
         }
 
@@ -70,4 +71,19 @@ public class QueueUsingLinkedList {
         System.out.println("After clear: " + queue);
     }
 }
-
+// Queue: [10, 20, 30]
+// Peek: 10
+// Element: 10
+// Poll: 10
+// Remove: 20
+// Size: 1
+// Contains 20: false
+// Is Empty: false
+// Iterating: 30
+// Array: [30]
+// After addAll: [30, 100, 200]
+// ContainsAll temp: true
+// After removeAll: [30]
+// After retainAll: [500]
+// After remove object: []
+// After clear: []

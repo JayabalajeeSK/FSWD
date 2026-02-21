@@ -33,12 +33,15 @@ import jakarta.validation.Valid;
 @Tag(name = "Student API", description = "CRUD operations for Students")
 @RestController
 @RequestMapping("/api/students")
-public class StudentController {
+public class StudentController 
+{
 
-    private final List<String> adminEmails = List.of(
-        "admin1@gmail.com",
-        "admin2@gmail.com"
-);
+        private final List<String> adminEmails = List.of(
+            "admin1@gmail.com",
+            "admin2@gmail.com",
+            "admin3@gmail.com",
+            "admin22@gmail.com"
+        );
 
 //    private boolean isAdmin() 
 //    {
@@ -48,21 +51,16 @@ public class StudentController {
 //    return adminEmails.contains(currentUserEmail);
 //}
     
-    private boolean isAdmin() {
+    private boolean isAdmin() 
+    {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String currentUserEmail = auth.getName(); // JWT username = email
         return adminEmails.contains(currentUserEmail);
     }
 
 
-
-
     @Autowired
     private StudentService studentService;
-
-
-
-
 
     // GET all students
     @Operation(summary = "Get all students")
@@ -90,9 +88,10 @@ public class StudentController {
     public ResponseEntity<Student> createStudent(@RequestBody @Valid StudentDTO dto) 
     {
 
-            if (!isAdmin()) {
-        return new ResponseEntity<>(HttpStatus.FORBIDDEN);
-    }
+        if (!isAdmin()) 
+        {
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+        }
 
         Student student = StudentMapper.toEntity(dto);
         Student savedStudent = studentService.createStudent(student);
@@ -107,9 +106,10 @@ public class StudentController {
             @RequestBody StudentDTO dto) 
     {
 
-            if (!isAdmin()) {
-        return new ResponseEntity<>(HttpStatus.FORBIDDEN);
-    }
+        if (!isAdmin()) 
+        {
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+        }
 
         Optional<Student> studentOptional = studentService.getStudentById(id);
 
@@ -134,10 +134,10 @@ public class StudentController {
             @PathVariable Long id, 
             @RequestBody StudentDTO dto) 
     {
-
-            if (!isAdmin()) {
-        return new ResponseEntity<>(HttpStatus.FORBIDDEN);
-    }
+        if (!isAdmin()) 
+        {
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+        }
 
 
         Optional<Student> studentOptional = studentService.getStudentById(id);
@@ -165,17 +165,17 @@ public class StudentController {
     }
 
 
-
-
     // DELETE student
     @Operation(summary = "Delete student by ID")
     @DeleteMapping("delete/{id}")
     public ResponseEntity<Void> deleteStudent(@PathVariable Long id) 
     {
 
-            if (!isAdmin()) {
-        return new ResponseEntity<>(HttpStatus.FORBIDDEN);
-    }
+        if (!isAdmin()) 
+        {
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+        }
+
         Optional<Student> studentOptional = studentService.getStudentById(id);
         if (studentOptional.isPresent()) 
         {

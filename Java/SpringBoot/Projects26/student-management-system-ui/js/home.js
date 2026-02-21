@@ -2,7 +2,7 @@ const backendUrl = "http://localhost:8080/api/students";
 const token = localStorage.getItem("token");
 
 // Admin emails
-const adminEmails = ["admin1@gmail.com", "admin2@gmail.com"];
+const adminEmails = ["admin1@gmail.com", "admin2@gmail.com", "admin22@gmail.com"];
 
 if (!token) {
     window.location.href = "index.html"; // redirect if not logged in

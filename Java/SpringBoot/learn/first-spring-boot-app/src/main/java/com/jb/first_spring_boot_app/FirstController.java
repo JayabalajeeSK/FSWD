@@ -42,6 +42,4 @@ public class FirstController
     {
     	return ResponseEntity.ok("jayabalajee_sk");
     }
-    
-    
 }

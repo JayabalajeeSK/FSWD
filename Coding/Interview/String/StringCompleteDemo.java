@@ -109,8 +109,10 @@ public class StringCompleteDemo {
         String[][] str2D = {{"A","B"},{"C","D"}};
         System.out.println("2D String array: " + Arrays.deepToString(str2D));
 
-        for(int i=0;i<str2D.length;i++){
-            for(int j=0;j<str2D[i].length;j++){
+        for(int i=0;i<str2D.length;i++)
+        {
+            for(int j=0;j<str2D[i].length;j++)
+            {
                 System.out.print(str2D[i][j] + " ");
             }
             System.out.println();
@@ -129,4 +131,41 @@ public class StringCompleteDemo {
         System.out.println("List of Lists → 2D String array: " + Arrays.deepToString(backStr2D));
     }
 }
-
+// s1: Hello, s2: World, s3: Java, s4: ABC, s5: 12345, s6: A-B-C
+// Length of s1: 5
+// Char at index 1: e
+// Substring (1,4): ell
+// Concat s1+s2: HelloWorld
+// Uppercase: HELLO
+// Lowercase: world
+// Trim: 'Hello'
+// Replace e->a: Hallo
+// ReplaceAll regex: abcXXX
+// StartsWith H? true
+// EndsWith o? true
+// Contains 'll'? true
+// IndexOf 'l': 2
+// LastIndexOf 'l': 3
+// Equals? true
+// EqualsIgnoreCase? true
+// CompareTo: -15
+// CompareToIgnoreCase: -15
+// Split: [Apple, Banana, Cherry]
+// Joined: Apple | Banana | Cherry
+// Char array: [H, e, l, l, o]
+// Byte array: [72, 101, 108, 108, 111]
+// ValueOf: 100
+// Formatted: Name: Jay, Age: 25
+// StringBuilder: Hello Builder
+// Insert: Start-Hello Builder
+// Replace: Begin-Hello Builder
+// Delete: -Hello Builder
+// Reverse: redliuB olleH-
+// StringBuffer: World Buffer
+// For loop chars: H e l l o
+// Enhanced for loop chars: H e l l o
+// 2D String array: [[A, B], [C, D]]
+// A B
+// C D
+// 2D String ? List of Lists: [[A, B], [C, D]]
+// List of Lists ? 2D String array: [[A, B], [C, D]]

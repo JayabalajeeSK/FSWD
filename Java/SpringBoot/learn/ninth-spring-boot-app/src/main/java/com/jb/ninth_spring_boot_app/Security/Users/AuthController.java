@@ -49,7 +49,8 @@ public class AuthController {
 
 
     @PostMapping("/login")
-    public Map<String, String> login(@RequestBody StudentUser user) {
+    public Map<String, String> login(@RequestBody StudentUser user) 
+    {
 
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(

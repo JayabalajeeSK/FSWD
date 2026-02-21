@@ -32,7 +32,8 @@ public class QueueUsingArrayDeque {
         // Iterator
         Iterator<Integer> it = queue.iterator();
         System.out.print("Iterating: ");
-        while (it.hasNext()) {
+        while (it.hasNext()) 
+        {
             System.out.print(it.next() + " ");
         }
 
@@ -65,3 +66,18 @@ public class QueueUsingArrayDeque {
         System.out.println("After clear: " + queue);
     }
 }
+// Queue: [1, 2, 3]
+// Peek: 1
+// Element: 1
+// Poll: 1
+// Remove: 2
+// Size: 1
+// Contains 2: false
+// Is Empty: false
+// Iterating: 3
+// Array: [3]
+// After addAll: [3, 10, 20]
+// ContainsAll temp: true
+// After removeAll: [3]
+// After retainAll: [100]
+// After clear: []

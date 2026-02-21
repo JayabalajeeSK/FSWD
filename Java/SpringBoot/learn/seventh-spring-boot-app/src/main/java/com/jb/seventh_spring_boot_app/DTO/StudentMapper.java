@@ -1,7 +1,6 @@
 package com.jb.seventh_spring_boot_app.DTO;
 import com.jb.seventh_spring_boot_app.Student;
 
-
 public class StudentMapper {
 
     public static Student toEntity(StudentDTO dto) {

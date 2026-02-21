@@ -42,8 +42,10 @@ public class Int2DArrayCompleteDemo {
         // ===============================
         // Nested for loop
         System.out.println("Nested for loop:");
-        for(int i=0; i<arr2.length; i++) {
-            for(int j=0; j<arr2[i].length; j++) {
+        for(int i=0; i<arr2.length; i++) 
+        {
+            for(int j=0; j<arr2[i].length; j++) 
+            {
                 System.out.print(arr2[i][j] + " ");
             }
             System.out.println();
@@ -79,3 +81,21 @@ public class Int2DArrayCompleteDemo {
         System.out.println("List of Lists → 2D array: " + Arrays.deepToString(backArray));
     }
 }
+// Rows: 2
+// Cols (first row): 3
+// Sorted first row: [1, 2, 3]
+// Binary Search in first row (2): 1
+// CopyOf 2D: [[1, 2, 3], [4, 5, 6]]
+// DeepEquals: true
+// Filled 2D: [[7, 7], [7, 7]]
+// Nested for loop:
+// 1 2 3
+// 4 5 6
+// Enhanced for loop:
+// 1 2 3
+// 4 5 6
+// Stream API:
+// [1, 2, 3]
+// [4, 5, 6]
+// 2D array ? List of Lists: [[1, 2, 3], [4, 5, 6]]
+// List of Lists ? 2D array: [[1, 2, 3], [4, 5, 6]]

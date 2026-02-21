@@ -3,7 +3,8 @@ package Array;
 import java.util.*;
 
 public class ArrayList1DCompleteDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
 
         // ===============================
         // 1D ArrayList Creation (All Ways)
@@ -81,4 +82,19 @@ public class ArrayList1DCompleteDemo {
         System.out.println("After clear: " + list1);
     }
 }
-
+// After add: [1, 5, 10, 20, 30, 10, 20, 30]
+// Get index 2: 10
+// After set: [1, 5, 99, 20, 30, 10, 20, 30]
+// After remove: [5, 99, 20]
+// Contains 99? true
+// IndexOf 99: 1
+// LastIndexOf 99: 1
+// IsEmpty? false
+// Size: 3
+// For loop: 5 99 20
+// Enhanced for loop: 5 99 20
+// Iterator: 5 99 20
+// 5 99 20
+// Array from list: [5, 99, 20]
+// List from array: [5, 99, 20]
+// After clear: []

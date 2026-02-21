@@ -105,4 +105,29 @@ public class LinkedListCollection {
         System.out.println("After clear, is empty? " + list.isEmpty());
     }
 }
-
+// After add: [5, 10, 15, 20, 30, 40]
+// First element: 5
+// Last element: 40
+// Element at index 3: 20
+// After remove: [15, 30]
+// After set: [100, 30]
+// Contains 15? false
+// Index of 30: 1
+// Is Empty? false
+// Size: 2
+// Iterate using for-each:
+// 100 30
+// Iterate using iterator:
+// 100 30
+// Iterate using descendingIterator:
+// 30 100
+// After push: [200, 100, 30]
+// Popped element: 200
+// After pop: [100, 30]
+// After offer methods: [50, 100, 30, 300, 400]
+// Poll first: 50
+// Poll last: 400
+// After poll: [100, 30, 300]
+// Peek first: 100
+// Peek last: 300
+// After clear, is empty? true

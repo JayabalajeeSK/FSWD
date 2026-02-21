@@ -1,7 +1,5 @@
 package com.jb.seventh_spring_boot_app;
 
-
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

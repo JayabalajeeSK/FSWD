@@ -74,4 +74,17 @@ public class IntArrayCompleteDemo {
                 Arrays.toString(backToArray));
     }
 }
-
+// Length: 4
+// Sorted: [10, 20, 30, 40]
+// Binary Search (30): 2
+// CopyOf: [10, 20, 30, 40]
+// CopyOfRange: [20, 30]
+// Equals: true
+// Filled: [7, 7, 7, 7, 7]
+// DeepEquals (2D): true
+// DeepToString: [[1, 2], [3, 4]]
+// 10 20 30 40
+// 10 20 30 40
+// 10203040
+// Array ? List: [10, 20, 30, 40]
+// List ? int[]: [10, 20, 30, 40]
