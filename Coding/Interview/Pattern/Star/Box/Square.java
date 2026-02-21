@@ -1,4 +1,4 @@
-package Interview.Pattern.Star.Box;
+package Pattern.Star.Box;
 
 public class Square 
 {

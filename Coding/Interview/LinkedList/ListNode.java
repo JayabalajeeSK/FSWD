@@ -1,4 +1,4 @@
-package Interview.LinkedList;
+package LinkedList;
 
 class ListNode {
     int val;

@@ -1,0 +1,151 @@
+/* ===== Global Styles ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== Container ===== */
+.container {
+    margin: 60px auto;
+    padding: 30px 25px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+    width: 90%;            /* Allow it to be smaller on mobile */
+    max-width: 800px;      /* Increased this so the table has room to breathe */
+    margin: 60px auto;
+    padding: 30px 25px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+}
+
+.container:hover {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Headings ===== */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* ===== Inputs ===== */
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+
+input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* ===== Buttons ===== */
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* ===== Links ===== */
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Messages ===== */
+#message {
+    text-align: center;
+    margin-top: 10px;
+    color: #e53935;
+    font-weight: 500;
+}
+
+/* ===== Table Styles ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    min-width: 500px;      /* Ensures the table doesn't get squished too small */
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    text-transform: uppercase;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* ===== Action Buttons ===== */
+a.edit-btn {
+    color: #2196F3;
+    font-weight: 500;
+}
+
+a.edit-btn:hover {
+    text-decoration: underline;
+}
+
+button.delete-btn {
+    background-color: #f44336;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+button.delete-btn:hover {
+    background-color: #d32f2f;
+}
+/* ===== Container Fixes ===== */
+
+
+/* ===== New: Responsive Table Wrapper ===== */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;      /* Adds a scrollbar ONLY if the table is too wide */
+    margin-top: 25px;
+    border-radius: 8px;
+}
+
+/* Modify your existing table style to remove the margin-top 
+   (since it's now on the wrapper) */
